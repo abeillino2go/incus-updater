@@ -1,11 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "incus-updater"
-version = "0.1.0"
-description = "Parallel updater for Incus containers"
+version = "1.0.0"
+description = "Paralleler Incus Container Update Manager mit Terminal UI"
+readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "textual>=0.70",
+    "textual>=0.80.0",
 ]
 
 [project.scripts]
-incus-updater = "incus_updater:main"
+incus-updater = "main:main"
+
+[tool.setuptools.packages.find]
+include = ["ui", "models"]

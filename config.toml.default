@@ -1,0 +1,27 @@
+[general]
+
+# Maximal so viele Container werden von diesem Programm
+# gleichzeitig gestartet.
+max_started_containers = 4
+
+# Maximal ein Container lädt gleichzeitig Updates.
+max_downloads = 1
+
+# Wartezeit nach dem Start eines STOPPED-Containers,
+# bevor Repository-Update / Download beginnt.
+# Bereits laufende Container sind davon nicht betroffen.
+startup_delay_seconds = 4
+
+# NEU: Aktiviert (true) oder deaktiviert (false) Snapshots vor Upgrades
+incus_snapshots = true      
+
+[containers]
+#include = [
+#    "arch-ai",
+#    "arch-aurto",
+#    "archadmino",
+#]
+include = []
+
+exclude = []
+
