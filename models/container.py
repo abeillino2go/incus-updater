@@ -22,3 +22,7 @@ class Container:
     def set_status(self, status: str) -> None:
         self.status = status
         output.status(self.name, status)
+        
+        # KORREKTUR: call_next nutzen statt call_from_thread, da wir im async Event-Loop laufen
+        if output.ui is not None:
+            output.ui.call_next(output.ui.update_container_table_row, self)

@@ -305,6 +305,8 @@ class IncusUpdaterApp(App):
         self.next_container_index = 0
         self.finished_count = 0
         self.finished = False
+        self.state_column_key = None  # NEU: Um den exakten Schlüssel zu speichern
+
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
@@ -329,10 +331,38 @@ class IncusUpdaterApp(App):
 
     def populate_container_table(self) -> None:
         table = self.query_one("#container-table", DataTable)
-        table.add_columns("CONTAINER", "STATE", "OS", "UPDATER")
+        table.clear()
+
+        # NEU: add_columns gibt eine Liste von ColumnKey-Objekten zurück
+        columns = table.add_columns("CONTAINER", "STATE", "OS", "UPDATER")
+        self.state_column_key = columns[1]  # Die zweite Spalte ist "STATE"
+
         for container in self.containers:
             state = "RUNNING" if container.original_running else "STOPPED"
-            table.add_row(container.name, state, container.distro_name, container.package_manager)
+            table.add_row(
+                container.name, state, container.distro_name, container.package_manager,
+                key=container.name
+            )
+
+
+    def update_container_table_row(self, container: Container) -> None:
+        """Aktualisiert die STATE-Spalte in der oberen Übersicht live."""
+        table = self.query_one("#container-table", DataTable)
+        if self.state_column_key is not None:
+            try:
+                # Farbliche Codierung je nach Zustand
+                status_text = container.status
+                if container.status == "SUCCESS":
+                    status_text = "[bold green]SUCCESS[/]"
+                elif container.status == "ERROR":
+                    status_text = "[bold red]ERROR[/]"
+                elif "DOWNLOADING" in container.status or "INSTALLING" in container.status:
+                    status_text = f"[bold yellow]{container.status}[/]"
+ 
+                table.update_cell(container.name, self.state_column_key, status_text)
+            except Exception:
+                pass
+
 
     def assign_initial_panels(self) -> None:
         for panel in self.panels:
