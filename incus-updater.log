@@ -5498,3 +5498,60 @@
 2026-09-30 15:41:06 [ubuntu-docker] container stopped
 2026-09-30 15:41:06 [ubuntu-docker] start slot released
 2026-09-30 15:41:06 SUMMARY: 24 successful, 0 failed
+
+2026-09-30 17:13:46 ==========================================================================================
+2026-09-30 17:13:46 Incus updater started: 2026-09-30 17:13:46
+2026-09-30 17:13:46 ==========================================================================================
+2026-09-30 17:13:47 Selected 24 container(s)
+2026-09-30 17:13:47 max_started_containers=4, max_downloads=1, startup_delay_seconds=4
+2026-09-30 17:13:47 [arch-ai] waiting for start slot
+2026-09-30 17:13:47 [arch-ai] start slot acquired
+2026-09-30 17:13:47 [arch-ai] starting container
+2026-09-30 17:13:47 [arch-aurto] waiting for start slot
+2026-09-30 17:13:47 [arch-aurto] start slot acquired
+2026-09-30 17:13:47 [arch-aurto] starting container
+2026-09-30 17:13:47 [arch-erpnext] waiting for start slot
+2026-09-30 17:13:47 [arch-erpnext] start slot acquired
+2026-09-30 17:13:47 [arch-erpnext] starting container
+2026-09-30 17:13:47 [arch-mssql] waiting for start slot
+2026-09-30 17:13:47 [arch-mssql] start slot acquired
+2026-09-30 17:13:47 [arch-mssql] starting container
+2026-09-30 17:13:47 [archadmino] waiting for start slot
+2026-09-30 17:13:47 [archcloud] waiting for start slot
+2026-09-30 17:13:47 [archie] waiting for start slot
+2026-09-30 17:13:47 [blackarch] waiting for start slot
+2026-09-30 17:13:47 [debbi10sql] container was already running
+2026-09-30 17:13:47 [debbi10sql] REPO-UPDATE started
+2026-09-30 17:13:47 [foodsoft16] waiting for start slot
+2026-09-30 17:13:47 [freedombox] container was already running
+2026-09-30 17:13:47 [freedombox] REPO-UPDATE started
+2026-09-30 17:13:47 [kali] waiting for start slot
+2026-09-30 17:13:47 [neth] waiting for start slot
+2026-09-30 17:13:47 [redmine17] waiting for start slot
+2026-09-30 17:13:47 [rocky] waiting for start slot
+2026-09-30 17:13:47 [siddy] container was already running
+2026-09-30 17:13:47 [siddy] REPO-UPDATE started
+2026-09-30 17:13:47 [srv-berlussimo-debian] waiting for start slot
+2026-09-30 17:13:47 [srv-erpnext-debian] waiting for start slot
+2026-09-30 17:13:47 [srv-gui-arch] waiting for start slot
+2026-09-30 17:13:47 [srv-openclaw-arch] waiting for start slot
+2026-09-30 17:13:47 [srv-redpanda-arch] waiting for start slot
+2026-09-30 17:13:47 [srv-shinobi] waiting for start slot
+2026-09-30 17:13:47 [susytumble] waiting for start slot
+2026-09-30 17:13:47 [ubuntu-docker] waiting for start slot
+2026-09-30 17:13:48 [arch-mssql] container started and is ready
+2026-09-30 17:13:48 [arch-mssql] waiting 4s for network/services
+2026-09-30 17:13:48 [arch-aurto] container started and is ready
+2026-09-30 17:13:48 [arch-aurto] waiting 4s for network/services
+2026-09-30 17:13:49 [arch-erpnext] container started and is ready
+2026-09-30 17:13:49 [arch-erpnext] waiting 4s for network/services
+2026-09-30 17:13:51 [arch-ai] container started and is ready
+2026-09-30 17:13:51 [arch-ai] waiting 4s for network/services
+2026-09-30 17:13:52 [arch-mssql] startup wait finished
+2026-09-30 17:13:52 [arch-mssql] REPO-UPDATE started
+2026-09-30 17:13:52 [arch-aurto] startup wait finished
+2026-09-30 17:13:52 [arch-aurto] REPO-UPDATE started
+2026-09-30 17:13:53 [arch-ai] stopping container
+2026-09-30 17:13:53 [arch-aurto] stopping container
+2026-09-30 17:13:53 [arch-erpnext] stopping container
+2026-09-30 17:13:53 [arch-mssql] stopping container

@@ -4,11 +4,11 @@ import argparse
 import asyncio
 import sys
 
-from .config import load_config, Config
-from .logger import run_log
-from .output import output
-from .models.container import Container
-from .ui.app import (
+from config import load_config, Config
+from logger import run_log
+from output import output
+from models.container import Container
+from ui.app import (
     get_all_containers, select_containers, inspect_container, 
     update_container, IncusUpdaterApp
 )

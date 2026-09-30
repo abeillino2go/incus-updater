@@ -8,12 +8,12 @@ from textual.app import App, ComposeResult
 from textual.containers import Grid, Vertical
 from textual.widgets import Footer, Header, RichLog, Static, DataTable
 
-from .config import Config
-from .logger import run_log
-from .output import output
-from .models.container import Container
-from .commands import CommandError, run_command, incus_exec, incus_command
-from .commands_snapshot import create_pre_update_snapshot, rollback_to_snapshot
+from config import Config
+from logger import run_log
+from output import output
+from models.container import Container
+from commands import CommandError, run_command, incus_exec, incus_command
+from commands_snapshot import create_pre_update_snapshot, rollback_to_snapshot
 
 DISCOVERY_TIMEOUT = 30
 PANEL_COUNT = 4
