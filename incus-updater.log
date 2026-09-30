@@ -4504,3 +4504,997 @@
 2026-09-30 15:18:39 [ubuntu-docker] container stopped
 2026-09-30 15:18:39 [ubuntu-docker] start slot released
 2026-09-30 15:18:39 SUMMARY: 23 successful, 1 failed
+
+2026-09-30 15:32:26 ==========================================================================================
+2026-09-30 15:32:26 Incus updater started: 2026-09-30 15:32:26
+2026-09-30 15:32:26 ==========================================================================================
+2026-09-30 15:32:28 Selected 24 container(s)
+2026-09-30 15:32:28 max_started_containers=4, max_downloads=1, startup_delay_seconds=4
+2026-09-30 15:32:28 [arch-ai] waiting for start slot
+2026-09-30 15:32:28 [arch-ai] start slot acquired
+2026-09-30 15:32:28 [arch-ai] starting container
+2026-09-30 15:32:28 [arch-aurto] waiting for start slot
+2026-09-30 15:32:28 [arch-aurto] start slot acquired
+2026-09-30 15:32:28 [arch-aurto] starting container
+2026-09-30 15:32:28 [arch-erpnext] waiting for start slot
+2026-09-30 15:32:28 [arch-erpnext] start slot acquired
+2026-09-30 15:32:28 [arch-erpnext] starting container
+2026-09-30 15:32:28 [arch-mssql] waiting for start slot
+2026-09-30 15:32:28 [arch-mssql] start slot acquired
+2026-09-30 15:32:28 [arch-mssql] starting container
+2026-09-30 15:32:28 [archadmino] waiting for start slot
+2026-09-30 15:32:28 [archcloud] waiting for start slot
+2026-09-30 15:32:28 [archie] waiting for start slot
+2026-09-30 15:32:28 [blackarch] waiting for start slot
+2026-09-30 15:32:28 [debbi10sql] container was already running
+2026-09-30 15:32:28 [debbi10sql] REPO-UPDATE started
+2026-09-30 15:32:28 [foodsoft16] waiting for start slot
+2026-09-30 15:32:28 [freedombox] container was already running
+2026-09-30 15:32:28 [freedombox] REPO-UPDATE started
+2026-09-30 15:32:28 [kali] waiting for start slot
+2026-09-30 15:32:28 [neth] waiting for start slot
+2026-09-30 15:32:28 [redmine17] waiting for start slot
+2026-09-30 15:32:28 [rocky] waiting for start slot
+2026-09-30 15:32:28 [siddy] container was already running
+2026-09-30 15:32:28 [siddy] REPO-UPDATE started
+2026-09-30 15:32:28 [srv-berlussimo-debian] waiting for start slot
+2026-09-30 15:32:28 [srv-erpnext-debian] waiting for start slot
+2026-09-30 15:32:28 [srv-gui-arch] waiting for start slot
+2026-09-30 15:32:28 [srv-openclaw-arch] waiting for start slot
+2026-09-30 15:32:28 [srv-redpanda-arch] waiting for start slot
+2026-09-30 15:32:28 [srv-shinobi] waiting for start slot
+2026-09-30 15:32:28 [susytumble] waiting for start slot
+2026-09-30 15:32:28 [ubuntu-docker] waiting for start slot
+2026-09-30 15:32:28 [arch-mssql] container started and is ready
+2026-09-30 15:32:28 [arch-mssql] waiting 4s for network/services
+2026-09-30 15:32:29 [arch-erpnext] container started and is ready
+2026-09-30 15:32:29 [arch-erpnext] waiting 4s for network/services
+2026-09-30 15:32:29 [arch-aurto] container started and is ready
+2026-09-30 15:32:29 [arch-aurto] waiting 4s for network/services
+2026-09-30 15:32:32 [arch-ai] container started and is ready
+2026-09-30 15:32:32 [arch-ai] waiting 4s for network/services
+2026-09-30 15:32:32 [siddy] REPO-UPDATE finished
+2026-09-30 15:32:32 [siddy] Checking for available updates...
+2026-09-30 15:32:32 [freedombox] REPO-UPDATE finished
+2026-09-30 15:32:32 [freedombox] Checking for available updates...
+2026-09-30 15:32:32 [arch-mssql] startup wait finished
+2026-09-30 15:32:32 [arch-mssql] REPO-UPDATE started
+2026-09-30 15:32:33 [arch-erpnext] startup wait finished
+2026-09-30 15:32:33 [arch-erpnext] REPO-UPDATE started
+2026-09-30 15:32:33 [arch-aurto] startup wait finished
+2026-09-30 15:32:33 [arch-aurto] REPO-UPDATE started
+2026-09-30 15:32:33 [siddy] Found 0 update(s).
+2026-09-30 15:32:33 [siddy] No updates available. Container is up to date.
+2026-09-30 15:32:33 [freedombox] Found 0 update(s).
+2026-09-30 15:32:33 [freedombox] No updates available. Container is up to date.
+2026-09-30 15:32:33 [arch-mssql] REPO-UPDATE finished
+2026-09-30 15:32:33 [arch-mssql] Checking for available updates...
+2026-09-30 15:32:33 [debbi10sql] REPO-UPDATE finished
+2026-09-30 15:32:33 [debbi10sql] Checking for available updates...
+2026-09-30 15:32:34 [arch-aurto] REPO-UPDATE finished
+2026-09-30 15:32:34 [arch-aurto] Checking for available updates...
+2026-09-30 15:32:34 [arch-mssql] Found 1 update(s).
+2026-09-30 15:32:34 [arch-mssql] ERROR: Snapshot creation failed: name 'create_pre_update_snapshot' is not defined
+2026-09-30 15:32:34 [arch-mssql] stopping container
+2026-09-30 15:32:34 [debbi10sql] Found 0 update(s).
+2026-09-30 15:32:34 [debbi10sql] No updates available. Container is up to date.
+2026-09-30 15:32:34 [arch-aurto] Found 0 update(s).
+2026-09-30 15:32:34 [arch-aurto] No updates available. Container is up to date.
+2026-09-30 15:32:34 [arch-aurto] stopping container
+2026-09-30 15:32:35 [arch-erpnext] REPO-UPDATE finished
+2026-09-30 15:32:35 [arch-erpnext] Checking for available updates...
+2026-09-30 15:32:35 [arch-aurto] container stopped
+2026-09-30 15:32:35 [arch-aurto] start slot released
+2026-09-30 15:32:35 [archadmino] start slot acquired
+2026-09-30 15:32:35 [archadmino] starting container
+2026-09-30 15:32:36 [arch-ai] startup wait finished
+2026-09-30 15:32:36 [arch-ai] REPO-UPDATE started
+2026-09-30 15:32:36 [arch-ai] REPO-UPDATE finished
+2026-09-30 15:32:36 [arch-ai] Checking for available updates...
+2026-09-30 15:32:36 [arch-mssql] container stopped
+2026-09-30 15:32:36 [arch-mssql] start slot released
+2026-09-30 15:32:36 [archcloud] start slot acquired
+2026-09-30 15:32:36 [archcloud] starting container
+2026-09-30 15:32:36 [arch-ai] Found 0 update(s).
+2026-09-30 15:32:36 [arch-ai] No updates available. Container is up to date.
+2026-09-30 15:32:36 [arch-ai] stopping container
+2026-09-30 15:32:37 [arch-ai] container stopped
+2026-09-30 15:32:37 [arch-ai] start slot released
+2026-09-30 15:32:37 [archie] start slot acquired
+2026-09-30 15:32:37 [archie] starting container
+2026-09-30 15:32:38 [archadmino] container started and is ready
+2026-09-30 15:32:38 [archadmino] waiting 4s for network/services
+2026-09-30 15:32:39 [arch-erpnext] Found 0 update(s).
+2026-09-30 15:32:39 [arch-erpnext] No updates available. Container is up to date.
+2026-09-30 15:32:39 [arch-erpnext] stopping container
+2026-09-30 15:32:42 [archadmino] startup wait finished
+2026-09-30 15:32:43 [archadmino] REPO-UPDATE started
+2026-09-30 15:32:43 [archcloud] container started and is ready
+2026-09-30 15:32:43 [archcloud] waiting 4s for network/services
+2026-09-30 15:32:43 [archie] container started and is ready
+2026-09-30 15:32:43 [archie] waiting 4s for network/services
+2026-09-30 15:32:43 [archadmino] REPO-UPDATE finished
+2026-09-30 15:32:43 [archadmino] Checking for available updates...
+2026-09-30 15:32:43 [archadmino] Found 2 update(s).
+2026-09-30 15:32:43 [archadmino] ERROR: Snapshot creation failed: name 'create_pre_update_snapshot' is not defined
+2026-09-30 15:32:43 [archadmino] stopping container
+2026-09-30 15:32:44 [archadmino] container stopped
+2026-09-30 15:32:44 [archadmino] start slot released
+2026-09-30 15:32:44 [blackarch] start slot acquired
+2026-09-30 15:32:44 [blackarch] starting container
+2026-09-30 15:32:45 [arch-erpnext] container stopped
+2026-09-30 15:32:45 [arch-erpnext] start slot released
+2026-09-30 15:32:45 [foodsoft16] start slot acquired
+2026-09-30 15:32:45 [foodsoft16] starting container
+2026-09-30 15:32:45 [foodsoft16] container started and is ready
+2026-09-30 15:32:45 [foodsoft16] waiting 4s for network/services
+2026-09-30 15:32:47 [blackarch] container started and is ready
+2026-09-30 15:32:47 [blackarch] waiting 4s for network/services
+2026-09-30 15:32:47 [archcloud] startup wait finished
+2026-09-30 15:32:47 [archcloud] REPO-UPDATE started
+2026-09-30 15:32:47 [archie] startup wait finished
+2026-09-30 15:32:47 [archie] REPO-UPDATE started
+2026-09-30 15:32:48 [archie] REPO-UPDATE finished
+2026-09-30 15:32:48 [archie] Checking for available updates...
+2026-09-30 15:32:48 [archie] Found 0 update(s).
+2026-09-30 15:32:48 [archie] No updates available. Container is up to date.
+2026-09-30 15:32:48 [archie] stopping container
+2026-09-30 15:32:49 [archie] container stopped
+2026-09-30 15:32:49 [archie] start slot released
+2026-09-30 15:32:49 [kali] start slot acquired
+2026-09-30 15:32:49 [kali] starting container
+2026-09-30 15:32:49 [foodsoft16] startup wait finished
+2026-09-30 15:32:49 [foodsoft16] REPO-UPDATE started
+2026-09-30 15:32:50 [kali] container started and is ready
+2026-09-30 15:32:50 [kali] waiting 4s for network/services
+2026-09-30 15:32:51 [blackarch] startup wait finished
+2026-09-30 15:32:51 [blackarch] REPO-UPDATE started
+2026-09-30 15:32:51 [foodsoft16] REPO-UPDATE finished
+2026-09-30 15:32:51 [foodsoft16] Checking for available updates...
+2026-09-30 15:32:52 [foodsoft16] Found 0 update(s).
+2026-09-30 15:32:52 [foodsoft16] No updates available. Container is up to date.
+2026-09-30 15:32:52 [foodsoft16] stopping container
+2026-09-30 15:32:52 [blackarch] REPO-UPDATE finished
+2026-09-30 15:32:52 [blackarch] Checking for available updates...
+2026-09-30 15:32:52 [blackarch] Found 0 update(s).
+2026-09-30 15:32:52 [blackarch] No updates available. Container is up to date.
+2026-09-30 15:32:52 [blackarch] stopping container
+2026-09-30 15:32:53 [foodsoft16] container stopped
+2026-09-30 15:32:53 [foodsoft16] start slot released
+2026-09-30 15:32:53 [neth] start slot acquired
+2026-09-30 15:32:53 [neth] starting container
+2026-09-30 15:32:53 [blackarch] container stopped
+2026-09-30 15:32:53 [blackarch] start slot released
+2026-09-30 15:32:53 [redmine17] start slot acquired
+2026-09-30 15:32:53 [redmine17] starting container
+2026-09-30 15:32:54 [redmine17] container started and is ready
+2026-09-30 15:32:54 [redmine17] waiting 4s for network/services
+2026-09-30 15:32:54 [neth] container started and is ready
+2026-09-30 15:32:54 [neth] waiting 4s for network/services
+2026-09-30 15:32:54 [kali] startup wait finished
+2026-09-30 15:32:54 [kali] REPO-UPDATE started
+2026-09-30 15:32:57 [kali] REPO-UPDATE finished
+2026-09-30 15:32:57 [kali] Checking for available updates...
+2026-09-30 15:32:58 [redmine17] startup wait finished
+2026-09-30 15:32:58 [redmine17] REPO-UPDATE started
+2026-09-30 15:32:58 [archcloud] REPO-UPDATE finished
+2026-09-30 15:32:58 [archcloud] Checking for available updates...
+2026-09-30 15:32:58 [neth] startup wait finished
+2026-09-30 15:32:58 [neth] REPO-UPDATE started
+2026-09-30 15:32:58 [kali] Found 0 update(s).
+2026-09-30 15:32:58 [kali] No updates available. Container is up to date.
+2026-09-30 15:32:58 [kali] stopping container
+2026-09-30 15:32:58 [archcloud] Found 0 update(s).
+2026-09-30 15:32:58 [archcloud] No updates available. Container is up to date.
+2026-09-30 15:32:58 [archcloud] stopping container
+2026-09-30 15:32:59 [archcloud] container stopped
+2026-09-30 15:32:59 [archcloud] start slot released
+2026-09-30 15:32:59 [rocky] start slot acquired
+2026-09-30 15:32:59 [rocky] starting container
+2026-09-30 15:33:00 [redmine17] REPO-UPDATE finished
+2026-09-30 15:33:00 [redmine17] Checking for available updates...
+2026-09-30 15:33:00 [redmine17] Found 0 update(s).
+2026-09-30 15:33:00 [redmine17] No updates available. Container is up to date.
+2026-09-30 15:33:00 [redmine17] stopping container
+2026-09-30 15:33:01 [kali] container stopped
+2026-09-30 15:33:01 [kali] start slot released
+2026-09-30 15:33:01 [srv-berlussimo-debian] start slot acquired
+2026-09-30 15:33:01 [srv-berlussimo-debian] starting container
+2026-09-30 15:33:01 [rocky] container started and is ready
+2026-09-30 15:33:01 [rocky] waiting 4s for network/services
+2026-09-30 15:33:01 [srv-berlussimo-debian] container started and is ready
+2026-09-30 15:33:01 [srv-berlussimo-debian] waiting 4s for network/services
+2026-09-30 15:33:02 [neth] REPO-UPDATE finished
+2026-09-30 15:33:02 [neth] Checking for available updates...
+2026-09-30 15:33:02 [redmine17] container stopped
+2026-09-30 15:33:02 [redmine17] start slot released
+2026-09-30 15:33:02 [srv-erpnext-debian] start slot acquired
+2026-09-30 15:33:02 [srv-erpnext-debian] starting container
+2026-09-30 15:33:02 [srv-erpnext-debian] container started and is ready
+2026-09-30 15:33:02 [srv-erpnext-debian] waiting 4s for network/services
+2026-09-30 15:33:03 [neth] Found 0 update(s).
+2026-09-30 15:33:03 [neth] No updates available. Container is up to date.
+2026-09-30 15:33:03 [neth] stopping container
+2026-09-30 15:33:05 [rocky] startup wait finished
+2026-09-30 15:33:05 [rocky] REPO-UPDATE started
+2026-09-30 15:33:05 [srv-berlussimo-debian] startup wait finished
+2026-09-30 15:33:05 [srv-berlussimo-debian] REPO-UPDATE started
+2026-09-30 15:33:06 [srv-erpnext-debian] startup wait finished
+2026-09-30 15:33:06 [srv-erpnext-debian] REPO-UPDATE started
+2026-09-30 15:33:06 [rocky] REPO-UPDATE finished
+2026-09-30 15:33:06 [rocky] Checking for available updates...
+2026-09-30 15:33:07 [srv-berlussimo-debian] REPO-UPDATE finished
+2026-09-30 15:33:07 [srv-berlussimo-debian] Checking for available updates...
+2026-09-30 15:33:08 [srv-berlussimo-debian] Found 0 update(s).
+2026-09-30 15:33:08 [srv-berlussimo-debian] No updates available. Container is up to date.
+2026-09-30 15:33:08 [srv-berlussimo-debian] stopping container
+2026-09-30 15:33:08 [rocky] Found 0 update(s).
+2026-09-30 15:33:08 [rocky] No updates available. Container is up to date.
+2026-09-30 15:33:08 [rocky] stopping container
+2026-09-30 15:33:08 [srv-erpnext-debian] REPO-UPDATE finished
+2026-09-30 15:33:08 [srv-erpnext-debian] Checking for available updates...
+2026-09-30 15:33:09 [srv-erpnext-debian] Found 0 update(s).
+2026-09-30 15:33:09 [srv-erpnext-debian] No updates available. Container is up to date.
+2026-09-30 15:33:09 [srv-erpnext-debian] stopping container
+2026-09-30 15:33:10 [rocky] container stopped
+2026-09-30 15:33:10 [rocky] start slot released
+2026-09-30 15:33:10 [srv-gui-arch] start slot acquired
+2026-09-30 15:33:10 [srv-gui-arch] starting container
+2026-09-30 15:33:11 [neth] container stopped
+2026-09-30 15:33:11 [neth] start slot released
+2026-09-30 15:33:11 [srv-openclaw-arch] start slot acquired
+2026-09-30 15:33:11 [srv-openclaw-arch] starting container
+2026-09-30 15:33:11 [srv-gui-arch] container started and is ready
+2026-09-30 15:33:11 [srv-gui-arch] waiting 4s for network/services
+2026-09-30 15:33:12 [srv-openclaw-arch] container started and is ready
+2026-09-30 15:33:12 [srv-openclaw-arch] waiting 4s for network/services
+2026-09-30 15:33:15 [srv-gui-arch] startup wait finished
+2026-09-30 15:33:15 [srv-gui-arch] REPO-UPDATE started
+2026-09-30 15:33:16 [srv-gui-arch] REPO-UPDATE finished
+2026-09-30 15:33:16 [srv-gui-arch] Checking for available updates...
+2026-09-30 15:33:16 [srv-openclaw-arch] startup wait finished
+2026-09-30 15:33:16 [srv-openclaw-arch] REPO-UPDATE started
+2026-09-30 15:33:16 [srv-gui-arch] Found 0 update(s).
+2026-09-30 15:33:16 [srv-gui-arch] No updates available. Container is up to date.
+2026-09-30 15:33:16 [srv-gui-arch] stopping container
+2026-09-30 15:33:17 [srv-openclaw-arch] REPO-UPDATE finished
+2026-09-30 15:33:17 [srv-openclaw-arch] Checking for available updates...
+2026-09-30 15:33:17 [srv-gui-arch] container stopped
+2026-09-30 15:33:17 [srv-gui-arch] start slot released
+2026-09-30 15:33:17 [srv-redpanda-arch] start slot acquired
+2026-09-30 15:33:17 [srv-redpanda-arch] starting container
+2026-09-30 15:33:17 [srv-openclaw-arch] Found 0 update(s).
+2026-09-30 15:33:17 [srv-openclaw-arch] No updates available. Container is up to date.
+2026-09-30 15:33:17 [srv-openclaw-arch] stopping container
+2026-09-30 15:33:17 [srv-redpanda-arch] container started and is ready
+2026-09-30 15:33:17 [srv-redpanda-arch] waiting 4s for network/services
+2026-09-30 15:33:18 [srv-openclaw-arch] container stopped
+2026-09-30 15:33:18 [srv-openclaw-arch] start slot released
+2026-09-30 15:33:18 [srv-shinobi] start slot acquired
+2026-09-30 15:33:18 [srv-shinobi] starting container
+2026-09-30 15:33:19 [srv-berlussimo-debian] container stopped
+2026-09-30 15:33:19 [srv-berlussimo-debian] start slot released
+2026-09-30 15:33:19 [susytumble] start slot acquired
+2026-09-30 15:33:19 [susytumble] starting container
+2026-09-30 15:33:20 [srv-shinobi] container started and is ready
+2026-09-30 15:33:20 [srv-shinobi] waiting 4s for network/services
+2026-09-30 15:33:20 [susytumble] container started and is ready
+2026-09-30 15:33:20 [susytumble] waiting 4s for network/services
+2026-09-30 15:33:21 [srv-erpnext-debian] container stopped
+2026-09-30 15:33:21 [srv-erpnext-debian] start slot released
+2026-09-30 15:33:21 [ubuntu-docker] start slot acquired
+2026-09-30 15:33:21 [ubuntu-docker] starting container
+2026-09-30 15:33:21 [srv-redpanda-arch] startup wait finished
+2026-09-30 15:33:21 [srv-redpanda-arch] REPO-UPDATE started
+2026-09-30 15:33:23 [srv-redpanda-arch] REPO-UPDATE finished
+2026-09-30 15:33:23 [srv-redpanda-arch] Checking for available updates...
+2026-09-30 15:33:23 [srv-redpanda-arch] Found 0 update(s).
+2026-09-30 15:33:23 [srv-redpanda-arch] No updates available. Container is up to date.
+2026-09-30 15:33:23 [srv-redpanda-arch] stopping container
+2026-09-30 15:33:24 [srv-shinobi] startup wait finished
+2026-09-30 15:33:24 [srv-shinobi] REPO-UPDATE started
+2026-09-30 15:33:24 [susytumble] startup wait finished
+2026-09-30 15:33:24 [susytumble] REPO-UPDATE started
+2026-09-30 15:33:24 [srv-redpanda-arch] container stopped
+2026-09-30 15:33:24 [srv-redpanda-arch] start slot released
+2026-09-30 15:33:26 [ubuntu-docker] container started and is ready
+2026-09-30 15:33:26 [ubuntu-docker] waiting 4s for network/services
+2026-09-30 15:33:27 [srv-shinobi] REPO-UPDATE finished
+2026-09-30 15:33:27 [srv-shinobi] Checking for available updates...
+2026-09-30 15:33:27 [srv-shinobi] Found 2 update(s).
+2026-09-30 15:33:27 [srv-shinobi] ERROR: Snapshot creation failed: name 'create_pre_update_snapshot' is not defined
+2026-09-30 15:33:27 [srv-shinobi] stopping container
+2026-09-30 15:33:27 [susytumble] REPO-UPDATE finished
+2026-09-30 15:33:27 [susytumble] Checking for available updates...
+2026-09-30 15:33:27 [susytumble] Found 0 update(s).
+2026-09-30 15:33:27 [susytumble] No updates available. Container is up to date.
+2026-09-30 15:33:27 [susytumble] stopping container
+2026-09-30 15:33:29 [srv-shinobi] container stopped
+2026-09-30 15:33:29 [srv-shinobi] start slot released
+2026-09-30 15:33:29 [susytumble] container stopped
+2026-09-30 15:33:29 [susytumble] start slot released
+2026-09-30 15:33:30 [ubuntu-docker] startup wait finished
+2026-09-30 15:33:30 [ubuntu-docker] REPO-UPDATE started
+2026-09-30 15:33:33 [ubuntu-docker] REPO-UPDATE finished
+2026-09-30 15:33:33 [ubuntu-docker] Checking for available updates...
+2026-09-30 15:33:33 [ubuntu-docker] Found 0 update(s).
+2026-09-30 15:33:33 [ubuntu-docker] No updates available. Container is up to date.
+2026-09-30 15:33:33 [ubuntu-docker] stopping container
+
+2026-09-30 15:37:32 ==========================================================================================
+2026-09-30 15:37:32 Incus updater started: 2026-09-30 15:37:32
+2026-09-30 15:37:32 ==========================================================================================
+
+2026-09-30 15:38:13 ==========================================================================================
+2026-09-30 15:38:13 Incus updater started: 2026-09-30 15:38:13
+2026-09-30 15:38:13 ==========================================================================================
+2026-09-30 15:38:15 Selected 24 container(s)
+2026-09-30 15:38:15 max_started_containers=4, max_downloads=1, startup_delay_seconds=4
+2026-09-30 15:38:15 [arch-ai] waiting for start slot
+2026-09-30 15:38:15 [arch-ai] start slot acquired
+2026-09-30 15:38:15 [arch-ai] starting container
+2026-09-30 15:38:15 [arch-aurto] waiting for start slot
+2026-09-30 15:38:15 [arch-aurto] start slot acquired
+2026-09-30 15:38:15 [arch-aurto] starting container
+2026-09-30 15:38:15 [arch-erpnext] waiting for start slot
+2026-09-30 15:38:15 [arch-erpnext] start slot acquired
+2026-09-30 15:38:15 [arch-erpnext] starting container
+2026-09-30 15:38:15 [arch-mssql] waiting for start slot
+2026-09-30 15:38:15 [arch-mssql] start slot acquired
+2026-09-30 15:38:15 [arch-mssql] starting container
+2026-09-30 15:38:15 [archadmino] waiting for start slot
+2026-09-30 15:38:15 [archcloud] waiting for start slot
+2026-09-30 15:38:15 [archie] waiting for start slot
+2026-09-30 15:38:15 [blackarch] waiting for start slot
+2026-09-30 15:38:15 [debbi10sql] container was already running
+2026-09-30 15:38:15 [debbi10sql] REPO-UPDATE started
+2026-09-30 15:38:15 [foodsoft16] waiting for start slot
+2026-09-30 15:38:15 [freedombox] container was already running
+2026-09-30 15:38:15 [freedombox] REPO-UPDATE started
+2026-09-30 15:38:15 [kali] waiting for start slot
+2026-09-30 15:38:15 [neth] waiting for start slot
+2026-09-30 15:38:15 [redmine17] waiting for start slot
+2026-09-30 15:38:15 [rocky] waiting for start slot
+2026-09-30 15:38:15 [siddy] container was already running
+2026-09-30 15:38:15 [siddy] REPO-UPDATE started
+2026-09-30 15:38:15 [srv-berlussimo-debian] waiting for start slot
+2026-09-30 15:38:15 [srv-erpnext-debian] waiting for start slot
+2026-09-30 15:38:15 [srv-gui-arch] waiting for start slot
+2026-09-30 15:38:15 [srv-openclaw-arch] waiting for start slot
+2026-09-30 15:38:15 [srv-redpanda-arch] waiting for start slot
+2026-09-30 15:38:15 [srv-shinobi] waiting for start slot
+2026-09-30 15:38:15 [susytumble] waiting for start slot
+2026-09-30 15:38:15 [ubuntu-docker] waiting for start slot
+2026-09-30 15:38:16 [arch-mssql] container started and is ready
+2026-09-30 15:38:16 [arch-mssql] waiting 4s for network/services
+2026-09-30 15:38:16 [arch-erpnext] container started and is ready
+2026-09-30 15:38:16 [arch-erpnext] waiting 4s for network/services
+2026-09-30 15:38:16 [arch-aurto] container started and is ready
+2026-09-30 15:38:16 [arch-aurto] waiting 4s for network/services
+2026-09-30 15:38:19 [arch-ai] container started and is ready
+2026-09-30 15:38:19 [arch-ai] waiting 4s for network/services
+2026-09-30 15:38:19 [siddy] REPO-UPDATE finished
+2026-09-30 15:38:19 [siddy] Checking for available updates...
+2026-09-30 15:38:19 [freedombox] REPO-UPDATE finished
+2026-09-30 15:38:19 [freedombox] Checking for available updates...
+2026-09-30 15:38:20 [arch-mssql] startup wait finished
+2026-09-30 15:38:20 [arch-mssql] REPO-UPDATE started
+2026-09-30 15:38:20 [arch-erpnext] startup wait finished
+2026-09-30 15:38:20 [arch-erpnext] REPO-UPDATE started
+2026-09-30 15:38:20 [arch-aurto] startup wait finished
+2026-09-30 15:38:20 [arch-aurto] REPO-UPDATE started
+2026-09-30 15:38:20 [freedombox] Found 0 update(s).
+2026-09-30 15:38:20 [freedombox] No updates available. Container is up to date.
+2026-09-30 15:38:21 [debbi10sql] REPO-UPDATE finished
+2026-09-30 15:38:21 [debbi10sql] Checking for available updates...
+2026-09-30 15:38:21 [arch-mssql] REPO-UPDATE finished
+2026-09-30 15:38:21 [arch-mssql] Checking for available updates...
+2026-09-30 15:38:21 [arch-erpnext] REPO-UPDATE finished
+2026-09-30 15:38:21 [arch-erpnext] Checking for available updates...
+2026-09-30 15:38:21 [siddy] Found 0 update(s).
+2026-09-30 15:38:21 [siddy] No updates available. Container is up to date.
+2026-09-30 15:38:21 [debbi10sql] Found 0 update(s).
+2026-09-30 15:38:21 [debbi10sql] No updates available. Container is up to date.
+2026-09-30 15:38:21 [arch-mssql] Found 1 update(s).
+2026-09-30 15:38:21 [arch-mssql] Creating snapshot: pre-update-20260930-153821...
+2026-09-30 15:38:21 [arch-aurto] REPO-UPDATE finished
+2026-09-30 15:38:21 [arch-aurto] Checking for available updates...
+2026-09-30 15:38:21 [arch-erpnext] Found 0 update(s).
+2026-09-30 15:38:21 [arch-erpnext] No updates available. Container is up to date.
+2026-09-30 15:38:21 [arch-erpnext] stopping container
+2026-09-30 15:38:22 [arch-mssql] Snapshot created successfully.
+2026-09-30 15:38:22 [arch-mssql] waiting for download slot
+2026-09-30 15:38:22 [arch-mssql] DOWNLOAD started
+2026-09-30 15:38:22 [arch-aurto] Found 0 update(s).
+2026-09-30 15:38:22 [arch-aurto] No updates available. Container is up to date.
+2026-09-30 15:38:22 [arch-aurto] stopping container
+2026-09-30 15:38:23 [arch-aurto] container stopped
+2026-09-30 15:38:23 [arch-aurto] start slot released
+2026-09-30 15:38:23 [archadmino] start slot acquired
+2026-09-30 15:38:23 [archadmino] starting container
+2026-09-30 15:38:23 [arch-mssql] DOWNLOAD finished
+2026-09-30 15:38:23 [arch-mssql] INSTALL started
+2026-09-30 15:38:23 [arch-ai] startup wait finished
+2026-09-30 15:38:23 [arch-ai] REPO-UPDATE started
+2026-09-30 15:38:23 [arch-ai] REPO-UPDATE finished
+2026-09-30 15:38:23 [arch-ai] Checking for available updates...
+2026-09-30 15:38:24 [arch-ai] Found 0 update(s).
+2026-09-30 15:38:24 [arch-ai] No updates available. Container is up to date.
+2026-09-30 15:38:24 [arch-ai] stopping container
+2026-09-30 15:38:24 [arch-mssql] INSTALL finished successfully
+2026-09-30 15:38:24 [arch-mssql] stopping container
+2026-09-30 15:38:25 [arch-erpnext] container stopped
+2026-09-30 15:38:25 [arch-erpnext] start slot released
+2026-09-30 15:38:25 [archcloud] start slot acquired
+2026-09-30 15:38:25 [archcloud] starting container
+2026-09-30 15:38:25 [arch-ai] container stopped
+2026-09-30 15:38:25 [arch-ai] start slot released
+2026-09-30 15:38:25 [archie] start slot acquired
+2026-09-30 15:38:25 [archie] starting container
+2026-09-30 15:38:25 [archadmino] container started and is ready
+2026-09-30 15:38:25 [archadmino] waiting 4s for network/services
+2026-09-30 15:38:26 [arch-mssql] container stopped
+2026-09-30 15:38:26 [arch-mssql] start slot released
+2026-09-30 15:38:26 [blackarch] start slot acquired
+2026-09-30 15:38:26 [blackarch] starting container
+2026-09-30 15:38:28 [blackarch] container started and is ready
+2026-09-30 15:38:28 [blackarch] waiting 4s for network/services
+2026-09-30 15:38:29 [archadmino] startup wait finished
+2026-09-30 15:38:29 [archadmino] REPO-UPDATE started
+2026-09-30 15:38:29 [archadmino] REPO-UPDATE finished
+2026-09-30 15:38:29 [archadmino] Checking for available updates...
+2026-09-30 15:38:30 [archie] container started and is ready
+2026-09-30 15:38:30 [archie] waiting 4s for network/services
+2026-09-30 15:38:30 [archadmino] Found 2 update(s).
+2026-09-30 15:38:30 [archadmino] Creating snapshot: pre-update-20260930-153830...
+2026-09-30 15:38:30 [archadmino] Snapshot created successfully.
+2026-09-30 15:38:30 [archadmino] waiting for download slot
+2026-09-30 15:38:30 [archadmino] DOWNLOAD started
+2026-09-30 15:38:30 [archcloud] container started and is ready
+2026-09-30 15:38:30 [archcloud] waiting 4s for network/services
+2026-09-30 15:38:32 [archadmino] DOWNLOAD finished
+2026-09-30 15:38:32 [archadmino] INSTALL started
+2026-09-30 15:38:32 [blackarch] startup wait finished
+2026-09-30 15:38:32 [blackarch] REPO-UPDATE started
+2026-09-30 15:38:34 [archie] startup wait finished
+2026-09-30 15:38:34 [archie] REPO-UPDATE started
+2026-09-30 15:38:34 [blackarch] REPO-UPDATE finished
+2026-09-30 15:38:34 [blackarch] Checking for available updates...
+2026-09-30 15:38:34 [archadmino] INSTALL finished successfully
+2026-09-30 15:38:34 [archadmino] stopping container
+2026-09-30 15:38:34 [archie] REPO-UPDATE finished
+2026-09-30 15:38:34 [archie] Checking for available updates...
+2026-09-30 15:38:34 [blackarch] Found 0 update(s).
+2026-09-30 15:38:34 [blackarch] No updates available. Container is up to date.
+2026-09-30 15:38:34 [blackarch] stopping container
+2026-09-30 15:38:34 [archie] Found 0 update(s).
+2026-09-30 15:38:34 [archie] No updates available. Container is up to date.
+2026-09-30 15:38:34 [archie] stopping container
+2026-09-30 15:38:34 [archcloud] startup wait finished
+2026-09-30 15:38:34 [archcloud] REPO-UPDATE started
+2026-09-30 15:38:35 [blackarch] container stopped
+2026-09-30 15:38:35 [blackarch] start slot released
+2026-09-30 15:38:35 [foodsoft16] start slot acquired
+2026-09-30 15:38:35 [foodsoft16] starting container
+2026-09-30 15:38:36 [foodsoft16] container started and is ready
+2026-09-30 15:38:36 [foodsoft16] waiting 4s for network/services
+2026-09-30 15:38:36 [archie] container stopped
+2026-09-30 15:38:36 [archie] start slot released
+2026-09-30 15:38:36 [kali] start slot acquired
+2026-09-30 15:38:36 [kali] starting container
+2026-09-30 15:38:36 [archadmino] container stopped
+2026-09-30 15:38:36 [archadmino] start slot released
+2026-09-30 15:38:36 [neth] start slot acquired
+2026-09-30 15:38:36 [neth] starting container
+2026-09-30 15:38:36 [neth] container started and is ready
+2026-09-30 15:38:36 [neth] waiting 4s for network/services
+2026-09-30 15:38:37 [kali] container started and is ready
+2026-09-30 15:38:37 [kali] waiting 4s for network/services
+2026-09-30 15:38:40 [foodsoft16] startup wait finished
+2026-09-30 15:38:40 [foodsoft16] REPO-UPDATE started
+2026-09-30 15:38:40 [neth] startup wait finished
+2026-09-30 15:38:40 [neth] REPO-UPDATE started
+2026-09-30 15:38:41 [kali] startup wait finished
+2026-09-30 15:38:41 [kali] REPO-UPDATE started
+2026-09-30 15:38:42 [neth] REPO-UPDATE finished
+2026-09-30 15:38:42 [neth] Checking for available updates...
+2026-09-30 15:38:42 [foodsoft16] REPO-UPDATE finished
+2026-09-30 15:38:42 [foodsoft16] Checking for available updates...
+2026-09-30 15:38:42 [foodsoft16] Found 0 update(s).
+2026-09-30 15:38:42 [foodsoft16] No updates available. Container is up to date.
+2026-09-30 15:38:42 [foodsoft16] stopping container
+2026-09-30 15:38:43 [neth] Found 0 update(s).
+2026-09-30 15:38:43 [neth] No updates available. Container is up to date.
+2026-09-30 15:38:43 [neth] stopping container
+2026-09-30 15:38:43 [kali] REPO-UPDATE finished
+2026-09-30 15:38:43 [kali] Checking for available updates...
+2026-09-30 15:38:44 [foodsoft16] container stopped
+2026-09-30 15:38:44 [foodsoft16] start slot released
+2026-09-30 15:38:44 [redmine17] start slot acquired
+2026-09-30 15:38:44 [redmine17] starting container
+2026-09-30 15:38:44 [redmine17] container started and is ready
+2026-09-30 15:38:44 [redmine17] waiting 4s for network/services
+2026-09-30 15:38:44 [kali] Found 0 update(s).
+2026-09-30 15:38:44 [kali] No updates available. Container is up to date.
+2026-09-30 15:38:44 [kali] stopping container
+2026-09-30 15:38:45 [archcloud] REPO-UPDATE finished
+2026-09-30 15:38:45 [archcloud] Checking for available updates...
+2026-09-30 15:38:45 [archcloud] Found 0 update(s).
+2026-09-30 15:38:45 [archcloud] No updates available. Container is up to date.
+2026-09-30 15:38:45 [archcloud] stopping container
+2026-09-30 15:38:46 [neth] container stopped
+2026-09-30 15:38:46 [neth] start slot released
+2026-09-30 15:38:46 [rocky] start slot acquired
+2026-09-30 15:38:46 [rocky] starting container
+2026-09-30 15:38:46 [kali] container stopped
+2026-09-30 15:38:46 [kali] start slot released
+2026-09-30 15:38:46 [srv-berlussimo-debian] start slot acquired
+2026-09-30 15:38:46 [srv-berlussimo-debian] starting container
+2026-09-30 15:38:46 [archcloud] container stopped
+2026-09-30 15:38:46 [archcloud] start slot released
+2026-09-30 15:38:46 [srv-erpnext-debian] start slot acquired
+2026-09-30 15:38:46 [srv-erpnext-debian] starting container
+2026-09-30 15:38:47 [srv-berlussimo-debian] container started and is ready
+2026-09-30 15:38:47 [srv-berlussimo-debian] waiting 4s for network/services
+2026-09-30 15:38:47 [srv-erpnext-debian] container started and is ready
+2026-09-30 15:38:47 [srv-erpnext-debian] waiting 4s for network/services
+2026-09-30 15:38:47 [rocky] container started and is ready
+2026-09-30 15:38:47 [rocky] waiting 4s for network/services
+2026-09-30 15:38:48 [redmine17] startup wait finished
+2026-09-30 15:38:48 [redmine17] REPO-UPDATE started
+2026-09-30 15:38:50 [redmine17] REPO-UPDATE finished
+2026-09-30 15:38:50 [redmine17] Checking for available updates...
+2026-09-30 15:38:51 [srv-berlussimo-debian] startup wait finished
+2026-09-30 15:38:51 [srv-berlussimo-debian] REPO-UPDATE started
+2026-09-30 15:38:51 [srv-erpnext-debian] startup wait finished
+2026-09-30 15:38:51 [srv-erpnext-debian] REPO-UPDATE started
+2026-09-30 15:38:51 [redmine17] Found 0 update(s).
+2026-09-30 15:38:51 [redmine17] No updates available. Container is up to date.
+2026-09-30 15:38:51 [redmine17] stopping container
+2026-09-30 15:38:51 [rocky] startup wait finished
+2026-09-30 15:38:51 [rocky] REPO-UPDATE started
+2026-09-30 15:38:53 [srv-berlussimo-debian] REPO-UPDATE finished
+2026-09-30 15:38:53 [srv-berlussimo-debian] Checking for available updates...
+2026-09-30 15:38:53 [srv-erpnext-debian] REPO-UPDATE finished
+2026-09-30 15:38:53 [srv-erpnext-debian] Checking for available updates...
+2026-09-30 15:38:53 [rocky] REPO-UPDATE finished
+2026-09-30 15:38:53 [rocky] Checking for available updates...
+2026-09-30 15:38:53 [redmine17] container stopped
+2026-09-30 15:38:53 [redmine17] start slot released
+2026-09-30 15:38:53 [srv-gui-arch] start slot acquired
+2026-09-30 15:38:53 [srv-gui-arch] starting container
+2026-09-30 15:38:54 [srv-berlussimo-debian] Found 0 update(s).
+2026-09-30 15:38:54 [srv-berlussimo-debian] No updates available. Container is up to date.
+2026-09-30 15:38:54 [srv-berlussimo-debian] stopping container
+2026-09-30 15:38:54 [srv-erpnext-debian] Found 0 update(s).
+2026-09-30 15:38:54 [srv-erpnext-debian] No updates available. Container is up to date.
+2026-09-30 15:38:54 [srv-erpnext-debian] stopping container
+2026-09-30 15:38:55 [rocky] Found 0 update(s).
+2026-09-30 15:38:55 [rocky] No updates available. Container is up to date.
+2026-09-30 15:38:55 [rocky] stopping container
+2026-09-30 15:38:55 [srv-gui-arch] container started and is ready
+2026-09-30 15:38:55 [srv-gui-arch] waiting 4s for network/services
+2026-09-30 15:38:56 [rocky] container stopped
+2026-09-30 15:38:56 [rocky] start slot released
+2026-09-30 15:38:56 [srv-openclaw-arch] start slot acquired
+2026-09-30 15:38:56 [srv-openclaw-arch] starting container
+2026-09-30 15:38:58 [srv-openclaw-arch] container started and is ready
+2026-09-30 15:38:58 [srv-openclaw-arch] waiting 4s for network/services
+2026-09-30 15:38:59 [srv-gui-arch] startup wait finished
+2026-09-30 15:38:59 [srv-gui-arch] REPO-UPDATE started
+2026-09-30 15:39:00 [srv-gui-arch] REPO-UPDATE finished
+2026-09-30 15:39:00 [srv-gui-arch] Checking for available updates...
+2026-09-30 15:39:00 [srv-gui-arch] Found 0 update(s).
+2026-09-30 15:39:00 [srv-gui-arch] No updates available. Container is up to date.
+2026-09-30 15:39:00 [srv-gui-arch] stopping container
+2026-09-30 15:39:01 [srv-gui-arch] container stopped
+2026-09-30 15:39:01 [srv-gui-arch] start slot released
+2026-09-30 15:39:01 [srv-redpanda-arch] start slot acquired
+2026-09-30 15:39:01 [srv-redpanda-arch] starting container
+2026-09-30 15:39:01 [srv-redpanda-arch] container started and is ready
+2026-09-30 15:39:01 [srv-redpanda-arch] waiting 4s for network/services
+2026-09-30 15:39:02 [srv-openclaw-arch] startup wait finished
+2026-09-30 15:39:02 [srv-openclaw-arch] REPO-UPDATE started
+2026-09-30 15:39:02 [srv-openclaw-arch] REPO-UPDATE finished
+2026-09-30 15:39:02 [srv-openclaw-arch] Checking for available updates...
+2026-09-30 15:39:03 [srv-openclaw-arch] Found 0 update(s).
+2026-09-30 15:39:03 [srv-openclaw-arch] No updates available. Container is up to date.
+2026-09-30 15:39:03 [srv-openclaw-arch] stopping container
+2026-09-30 15:39:04 [srv-openclaw-arch] container stopped
+2026-09-30 15:39:04 [srv-openclaw-arch] start slot released
+2026-09-30 15:39:04 [srv-shinobi] start slot acquired
+2026-09-30 15:39:04 [srv-shinobi] starting container
+2026-09-30 15:39:05 [srv-berlussimo-debian] container stopped
+2026-09-30 15:39:05 [srv-berlussimo-debian] start slot released
+2026-09-30 15:39:05 [susytumble] start slot acquired
+2026-09-30 15:39:05 [susytumble] starting container
+2026-09-30 15:39:05 [srv-redpanda-arch] startup wait finished
+2026-09-30 15:39:05 [srv-redpanda-arch] REPO-UPDATE started
+2026-09-30 15:39:05 [srv-shinobi] container started and is ready
+2026-09-30 15:39:05 [srv-shinobi] waiting 4s for network/services
+2026-09-30 15:39:05 [srv-erpnext-debian] container stopped
+2026-09-30 15:39:05 [srv-erpnext-debian] start slot released
+2026-09-30 15:39:05 [ubuntu-docker] start slot acquired
+2026-09-30 15:39:05 [ubuntu-docker] starting container
+2026-09-30 15:39:06 [srv-redpanda-arch] REPO-UPDATE finished
+2026-09-30 15:39:06 [srv-redpanda-arch] Checking for available updates...
+2026-09-30 15:39:06 [susytumble] container started and is ready
+2026-09-30 15:39:06 [susytumble] waiting 4s for network/services
+2026-09-30 15:39:07 [srv-redpanda-arch] Found 0 update(s).
+2026-09-30 15:39:07 [srv-redpanda-arch] No updates available. Container is up to date.
+2026-09-30 15:39:07 [srv-redpanda-arch] stopping container
+2026-09-30 15:39:08 [srv-redpanda-arch] container stopped
+2026-09-30 15:39:08 [srv-redpanda-arch] start slot released
+2026-09-30 15:39:09 [srv-shinobi] startup wait finished
+2026-09-30 15:39:09 [srv-shinobi] REPO-UPDATE started
+2026-09-30 15:39:10 [susytumble] startup wait finished
+2026-09-30 15:39:10 [susytumble] REPO-UPDATE started
+2026-09-30 15:39:11 [ubuntu-docker] container started and is ready
+2026-09-30 15:39:11 [ubuntu-docker] waiting 4s for network/services
+2026-09-30 15:39:12 [srv-shinobi] REPO-UPDATE finished
+2026-09-30 15:39:12 [srv-shinobi] Checking for available updates...
+2026-09-30 15:39:13 [srv-shinobi] Found 2 update(s).
+2026-09-30 15:39:13 [srv-shinobi] Creating snapshot: pre-update-20260930-153913...
+2026-09-30 15:39:13 [susytumble] REPO-UPDATE finished
+2026-09-30 15:39:13 [susytumble] Checking for available updates...
+2026-09-30 15:39:13 [susytumble] Found 0 update(s).
+2026-09-30 15:39:13 [susytumble] No updates available. Container is up to date.
+2026-09-30 15:39:13 [susytumble] stopping container
+2026-09-30 15:39:13 [srv-shinobi] Snapshot created successfully.
+2026-09-30 15:39:13 [srv-shinobi] waiting for download slot
+2026-09-30 15:39:13 [srv-shinobi] DOWNLOAD started
+2026-09-30 15:39:14 [srv-shinobi] DOWNLOAD finished
+2026-09-30 15:39:14 [srv-shinobi] INSTALL started
+2026-09-30 15:39:15 [ubuntu-docker] startup wait finished
+2026-09-30 15:39:15 [ubuntu-docker] REPO-UPDATE started
+2026-09-30 15:39:15 [srv-shinobi] INSTALL finished successfully
+2026-09-30 15:39:15 [srv-shinobi] stopping container
+2026-09-30 15:39:17 [srv-shinobi] container stopped
+2026-09-30 15:39:17 [srv-shinobi] start slot released
+2026-09-30 15:39:18 [ubuntu-docker] REPO-UPDATE finished
+2026-09-30 15:39:18 [ubuntu-docker] Checking for available updates...
+2026-09-30 15:39:18 [ubuntu-docker] Found 0 update(s).
+2026-09-30 15:39:18 [ubuntu-docker] No updates available. Container is up to date.
+2026-09-30 15:39:18 [ubuntu-docker] stopping container
+2026-09-30 15:39:20 [susytumble] container stopped
+2026-09-30 15:39:20 [susytumble] start slot released
+2026-09-30 15:39:29 [ubuntu-docker] container stopped
+2026-09-30 15:39:29 [ubuntu-docker] start slot released
+2026-09-30 15:39:29 SUMMARY: 24 successful, 0 failed
+
+2026-09-30 15:39:43 ==========================================================================================
+2026-09-30 15:39:43 Incus updater started: 2026-09-30 15:39:43
+2026-09-30 15:39:43 ==========================================================================================
+2026-09-30 15:39:45 Selected 24 container(s)
+2026-09-30 15:39:45 max_started_containers=4, max_downloads=1, startup_delay_seconds=4
+2026-09-30 15:39:45 [arch-ai] waiting for start slot
+2026-09-30 15:39:45 [arch-ai] start slot acquired
+2026-09-30 15:39:45 [arch-ai] starting container
+2026-09-30 15:39:45 [arch-aurto] waiting for start slot
+2026-09-30 15:39:45 [arch-aurto] start slot acquired
+2026-09-30 15:39:45 [arch-aurto] starting container
+2026-09-30 15:39:45 [arch-erpnext] waiting for start slot
+2026-09-30 15:39:45 [arch-erpnext] start slot acquired
+2026-09-30 15:39:45 [arch-erpnext] starting container
+2026-09-30 15:39:45 [arch-mssql] waiting for start slot
+2026-09-30 15:39:45 [arch-mssql] start slot acquired
+2026-09-30 15:39:45 [arch-mssql] starting container
+2026-09-30 15:39:45 [archadmino] waiting for start slot
+2026-09-30 15:39:45 [archcloud] waiting for start slot
+2026-09-30 15:39:45 [archie] waiting for start slot
+2026-09-30 15:39:45 [blackarch] waiting for start slot
+2026-09-30 15:39:45 [debbi10sql] container was already running
+2026-09-30 15:39:45 [debbi10sql] REPO-UPDATE started
+2026-09-30 15:39:45 [foodsoft16] waiting for start slot
+2026-09-30 15:39:45 [freedombox] container was already running
+2026-09-30 15:39:45 [freedombox] REPO-UPDATE started
+2026-09-30 15:39:45 [kali] waiting for start slot
+2026-09-30 15:39:45 [neth] waiting for start slot
+2026-09-30 15:39:45 [redmine17] waiting for start slot
+2026-09-30 15:39:45 [rocky] waiting for start slot
+2026-09-30 15:39:45 [siddy] container was already running
+2026-09-30 15:39:45 [siddy] REPO-UPDATE started
+2026-09-30 15:39:45 [srv-berlussimo-debian] waiting for start slot
+2026-09-30 15:39:45 [srv-erpnext-debian] waiting for start slot
+2026-09-30 15:39:45 [srv-gui-arch] waiting for start slot
+2026-09-30 15:39:45 [srv-openclaw-arch] waiting for start slot
+2026-09-30 15:39:45 [srv-redpanda-arch] waiting for start slot
+2026-09-30 15:39:45 [srv-shinobi] waiting for start slot
+2026-09-30 15:39:45 [susytumble] waiting for start slot
+2026-09-30 15:39:45 [ubuntu-docker] waiting for start slot
+2026-09-30 15:39:46 [arch-aurto] container started and is ready
+2026-09-30 15:39:46 [arch-aurto] waiting 4s for network/services
+2026-09-30 15:39:46 [arch-mssql] container started and is ready
+2026-09-30 15:39:46 [arch-mssql] waiting 4s for network/services
+2026-09-30 15:39:46 [arch-erpnext] container started and is ready
+2026-09-30 15:39:46 [arch-erpnext] waiting 4s for network/services
+2026-09-30 15:39:49 [arch-ai] container started and is ready
+2026-09-30 15:39:49 [arch-ai] waiting 4s for network/services
+2026-09-30 15:39:49 [siddy] REPO-UPDATE finished
+2026-09-30 15:39:49 [siddy] Checking for available updates...
+2026-09-30 15:39:49 [freedombox] REPO-UPDATE finished
+2026-09-30 15:39:49 [freedombox] Checking for available updates...
+2026-09-30 15:39:50 [arch-aurto] startup wait finished
+2026-09-30 15:39:50 [arch-aurto] REPO-UPDATE started
+2026-09-30 15:39:50 [arch-mssql] startup wait finished
+2026-09-30 15:39:50 [arch-mssql] REPO-UPDATE started
+2026-09-30 15:39:50 [arch-erpnext] startup wait finished
+2026-09-30 15:39:50 [arch-erpnext] REPO-UPDATE started
+2026-09-30 15:39:50 [debbi10sql] REPO-UPDATE finished
+2026-09-30 15:39:50 [debbi10sql] Checking for available updates...
+2026-09-30 15:39:50 [siddy] Found 0 update(s).
+2026-09-30 15:39:50 [siddy] No updates available. Container is up to date.
+2026-09-30 15:39:50 [freedombox] Found 0 update(s).
+2026-09-30 15:39:50 [freedombox] No updates available. Container is up to date.
+2026-09-30 15:39:51 [arch-mssql] REPO-UPDATE finished
+2026-09-30 15:39:51 [arch-mssql] Checking for available updates...
+2026-09-30 15:39:51 [debbi10sql] Found 0 update(s).
+2026-09-30 15:39:51 [debbi10sql] No updates available. Container is up to date.
+2026-09-30 15:39:51 [arch-mssql] Found 1 update(s).
+2026-09-30 15:39:51 [arch-mssql] Creating snapshot: pre-update-20260930-153951...
+2026-09-30 15:39:51 [arch-aurto] REPO-UPDATE finished
+2026-09-30 15:39:51 [arch-aurto] Checking for available updates...
+2026-09-30 15:39:51 [arch-mssql] Snapshot created successfully.
+2026-09-30 15:39:51 [arch-mssql] waiting for download slot
+2026-09-30 15:39:51 [arch-mssql] DOWNLOAD started
+2026-09-30 15:39:51 [arch-aurto] Found 0 update(s).
+2026-09-30 15:39:51 [arch-aurto] No updates available. Container is up to date.
+2026-09-30 15:39:51 [arch-aurto] stopping container
+2026-09-30 15:39:52 [arch-erpnext] REPO-UPDATE finished
+2026-09-30 15:39:52 [arch-erpnext] Checking for available updates...
+2026-09-30 15:39:52 [arch-aurto] container stopped
+2026-09-30 15:39:52 [arch-aurto] start slot released
+2026-09-30 15:39:52 [archadmino] start slot acquired
+2026-09-30 15:39:52 [archadmino] starting container
+2026-09-30 15:39:52 [arch-mssql] DOWNLOAD finished
+2026-09-30 15:39:52 [arch-mssql] INSTALL started
+2026-09-30 15:39:53 [arch-ai] startup wait finished
+2026-09-30 15:39:53 [arch-ai] REPO-UPDATE started
+2026-09-30 15:39:53 [arch-erpnext] Found 0 update(s).
+2026-09-30 15:39:53 [arch-erpnext] No updates available. Container is up to date.
+2026-09-30 15:39:53 [arch-erpnext] stopping container
+2026-09-30 15:39:53 [arch-ai] REPO-UPDATE finished
+2026-09-30 15:39:53 [arch-ai] Checking for available updates...
+2026-09-30 15:39:54 [arch-ai] Found 0 update(s).
+2026-09-30 15:39:54 [arch-ai] No updates available. Container is up to date.
+2026-09-30 15:39:54 [arch-ai] stopping container
+2026-09-30 15:39:54 [arch-mssql] INSTALL finished successfully
+2026-09-30 15:39:54 [arch-mssql] stopping container
+2026-09-30 15:39:55 [archadmino] container started and is ready
+2026-09-30 15:39:55 [archadmino] waiting 4s for network/services
+2026-09-30 15:39:55 [arch-ai] container stopped
+2026-09-30 15:39:55 [arch-ai] start slot released
+2026-09-30 15:39:55 [archcloud] start slot acquired
+2026-09-30 15:39:55 [archcloud] starting container
+2026-09-30 15:39:56 [arch-mssql] container stopped
+2026-09-30 15:39:56 [arch-mssql] start slot released
+2026-09-30 15:39:56 [archie] start slot acquired
+2026-09-30 15:39:56 [archie] starting container
+2026-09-30 15:39:59 [archadmino] startup wait finished
+2026-09-30 15:39:59 [archadmino] REPO-UPDATE started
+2026-09-30 15:39:59 [archadmino] REPO-UPDATE finished
+2026-09-30 15:39:59 [archadmino] Checking for available updates...
+2026-09-30 15:39:59 [archadmino] Found 2 update(s).
+2026-09-30 15:39:59 [archadmino] Creating snapshot: pre-update-20260930-153959...
+2026-09-30 15:40:00 [archadmino] Snapshot created successfully.
+2026-09-30 15:40:00 [archadmino] waiting for download slot
+2026-09-30 15:40:00 [archadmino] DOWNLOAD started
+2026-09-30 15:40:00 [archie] container started and is ready
+2026-09-30 15:40:00 [archie] waiting 4s for network/services
+2026-09-30 15:40:00 [archcloud] container started and is ready
+2026-09-30 15:40:00 [archcloud] waiting 4s for network/services
+2026-09-30 15:40:02 [archadmino] DOWNLOAD finished
+2026-09-30 15:40:02 [archadmino] INSTALL started
+2026-09-30 15:40:04 [archie] startup wait finished
+2026-09-30 15:40:04 [archie] REPO-UPDATE started
+2026-09-30 15:40:04 [archcloud] startup wait finished
+2026-09-30 15:40:04 [archcloud] REPO-UPDATE started
+2026-09-30 15:40:05 [archie] REPO-UPDATE finished
+2026-09-30 15:40:05 [archie] Checking for available updates...
+2026-09-30 15:40:05 [archie] Found 0 update(s).
+2026-09-30 15:40:05 [archie] No updates available. Container is up to date.
+2026-09-30 15:40:05 [archie] stopping container
+2026-09-30 15:40:06 [archadmino] INSTALL finished successfully
+2026-09-30 15:40:06 [archadmino] stopping container
+2026-09-30 15:40:07 [archie] container stopped
+2026-09-30 15:40:07 [archie] start slot released
+2026-09-30 15:40:07 [blackarch] start slot acquired
+2026-09-30 15:40:07 [blackarch] starting container
+2026-09-30 15:40:08 [archadmino] container stopped
+2026-09-30 15:40:08 [archadmino] start slot released
+2026-09-30 15:40:08 [foodsoft16] start slot acquired
+2026-09-30 15:40:08 [foodsoft16] starting container
+2026-09-30 15:40:08 [foodsoft16] container started and is ready
+2026-09-30 15:40:08 [foodsoft16] waiting 4s for network/services
+2026-09-30 15:40:10 [blackarch] container started and is ready
+2026-09-30 15:40:10 [blackarch] waiting 4s for network/services
+2026-09-30 15:40:11 [arch-erpnext] container stopped
+2026-09-30 15:40:11 [arch-erpnext] start slot released
+2026-09-30 15:40:11 [kali] start slot acquired
+2026-09-30 15:40:11 [kali] starting container
+2026-09-30 15:40:12 [foodsoft16] startup wait finished
+2026-09-30 15:40:12 [foodsoft16] REPO-UPDATE started
+2026-09-30 15:40:13 [kali] container started and is ready
+2026-09-30 15:40:13 [kali] waiting 4s for network/services
+2026-09-30 15:40:14 [blackarch] startup wait finished
+2026-09-30 15:40:14 [blackarch] REPO-UPDATE started
+2026-09-30 15:40:14 [foodsoft16] REPO-UPDATE finished
+2026-09-30 15:40:14 [foodsoft16] Checking for available updates...
+2026-09-30 15:40:15 [archcloud] REPO-UPDATE finished
+2026-09-30 15:40:15 [archcloud] Checking for available updates...
+2026-09-30 15:40:15 [foodsoft16] Found 0 update(s).
+2026-09-30 15:40:15 [foodsoft16] No updates available. Container is up to date.
+2026-09-30 15:40:15 [foodsoft16] stopping container
+2026-09-30 15:40:15 [archcloud] Found 0 update(s).
+2026-09-30 15:40:15 [archcloud] No updates available. Container is up to date.
+2026-09-30 15:40:15 [archcloud] stopping container
+2026-09-30 15:40:15 [blackarch] REPO-UPDATE finished
+2026-09-30 15:40:15 [blackarch] Checking for available updates...
+2026-09-30 15:40:16 [blackarch] Found 0 update(s).
+2026-09-30 15:40:16 [blackarch] No updates available. Container is up to date.
+2026-09-30 15:40:16 [blackarch] stopping container
+2026-09-30 15:40:16 [archcloud] container stopped
+2026-09-30 15:40:16 [archcloud] start slot released
+2026-09-30 15:40:16 [neth] start slot acquired
+2026-09-30 15:40:16 [neth] starting container
+2026-09-30 15:40:16 [foodsoft16] container stopped
+2026-09-30 15:40:16 [foodsoft16] start slot released
+2026-09-30 15:40:16 [redmine17] start slot acquired
+2026-09-30 15:40:16 [redmine17] starting container
+2026-09-30 15:40:17 [kali] startup wait finished
+2026-09-30 15:40:17 [kali] REPO-UPDATE started
+2026-09-30 15:40:17 [neth] container started and is ready
+2026-09-30 15:40:17 [neth] waiting 4s for network/services
+2026-09-30 15:40:17 [blackarch] container stopped
+2026-09-30 15:40:17 [blackarch] start slot released
+2026-09-30 15:40:17 [rocky] start slot acquired
+2026-09-30 15:40:17 [rocky] starting container
+2026-09-30 15:40:17 [redmine17] container started and is ready
+2026-09-30 15:40:17 [redmine17] waiting 4s for network/services
+2026-09-30 15:40:18 [rocky] container started and is ready
+2026-09-30 15:40:18 [rocky] waiting 4s for network/services
+2026-09-30 15:40:19 [kali] REPO-UPDATE finished
+2026-09-30 15:40:19 [kali] Checking for available updates...
+2026-09-30 15:40:19 [kali] Found 0 update(s).
+2026-09-30 15:40:19 [kali] No updates available. Container is up to date.
+2026-09-30 15:40:19 [kali] stopping container
+2026-09-30 15:40:21 [neth] startup wait finished
+2026-09-30 15:40:21 [neth] REPO-UPDATE started
+2026-09-30 15:40:21 [redmine17] startup wait finished
+2026-09-30 15:40:21 [redmine17] REPO-UPDATE started
+2026-09-30 15:40:22 [kali] container stopped
+2026-09-30 15:40:22 [kali] start slot released
+2026-09-30 15:40:22 [srv-berlussimo-debian] start slot acquired
+2026-09-30 15:40:22 [srv-berlussimo-debian] starting container
+2026-09-30 15:40:22 [srv-berlussimo-debian] container started and is ready
+2026-09-30 15:40:22 [srv-berlussimo-debian] waiting 4s for network/services
+2026-09-30 15:40:22 [rocky] startup wait finished
+2026-09-30 15:40:22 [rocky] REPO-UPDATE started
+2026-09-30 15:40:23 [neth] REPO-UPDATE finished
+2026-09-30 15:40:23 [neth] Checking for available updates...
+2026-09-30 15:40:24 [redmine17] REPO-UPDATE finished
+2026-09-30 15:40:24 [redmine17] Checking for available updates...
+2026-09-30 15:40:24 [redmine17] Found 0 update(s).
+2026-09-30 15:40:24 [redmine17] No updates available. Container is up to date.
+2026-09-30 15:40:24 [redmine17] stopping container
+2026-09-30 15:40:24 [rocky] REPO-UPDATE finished
+2026-09-30 15:40:24 [rocky] Checking for available updates...
+2026-09-30 15:40:25 [neth] Found 0 update(s).
+2026-09-30 15:40:25 [neth] No updates available. Container is up to date.
+2026-09-30 15:40:25 [neth] stopping container
+2026-09-30 15:40:26 [redmine17] container stopped
+2026-09-30 15:40:26 [redmine17] start slot released
+2026-09-30 15:40:26 [srv-erpnext-debian] start slot acquired
+2026-09-30 15:40:26 [srv-erpnext-debian] starting container
+2026-09-30 15:40:26 [rocky] Found 0 update(s).
+2026-09-30 15:40:26 [rocky] No updates available. Container is up to date.
+2026-09-30 15:40:26 [rocky] stopping container
+2026-09-30 15:40:26 [srv-berlussimo-debian] startup wait finished
+2026-09-30 15:40:26 [srv-berlussimo-debian] REPO-UPDATE started
+2026-09-30 15:40:26 [srv-erpnext-debian] container started and is ready
+2026-09-30 15:40:26 [srv-erpnext-debian] waiting 4s for network/services
+2026-09-30 15:40:27 [srv-berlussimo-debian] REPO-UPDATE finished
+2026-09-30 15:40:27 [srv-berlussimo-debian] Checking for available updates...
+2026-09-30 15:40:27 [rocky] container stopped
+2026-09-30 15:40:27 [rocky] start slot released
+2026-09-30 15:40:27 [srv-gui-arch] start slot acquired
+2026-09-30 15:40:27 [srv-gui-arch] starting container
+2026-09-30 15:40:28 [srv-berlussimo-debian] Found 0 update(s).
+2026-09-30 15:40:28 [srv-berlussimo-debian] No updates available. Container is up to date.
+2026-09-30 15:40:28 [srv-berlussimo-debian] stopping container
+2026-09-30 15:40:29 [srv-gui-arch] container started and is ready
+2026-09-30 15:40:29 [srv-gui-arch] waiting 4s for network/services
+2026-09-30 15:40:29 [neth] container stopped
+2026-09-30 15:40:29 [neth] start slot released
+2026-09-30 15:40:29 [srv-openclaw-arch] start slot acquired
+2026-09-30 15:40:29 [srv-openclaw-arch] starting container
+2026-09-30 15:40:30 [srv-erpnext-debian] startup wait finished
+2026-09-30 15:40:30 [srv-erpnext-debian] REPO-UPDATE started
+2026-09-30 15:40:31 [srv-openclaw-arch] container started and is ready
+2026-09-30 15:40:31 [srv-openclaw-arch] waiting 4s for network/services
+2026-09-30 15:40:32 [srv-erpnext-debian] REPO-UPDATE finished
+2026-09-30 15:40:32 [srv-erpnext-debian] Checking for available updates...
+2026-09-30 15:40:32 [srv-erpnext-debian] Found 0 update(s).
+2026-09-30 15:40:32 [srv-erpnext-debian] No updates available. Container is up to date.
+2026-09-30 15:40:32 [srv-erpnext-debian] stopping container
+2026-09-30 15:40:33 [srv-gui-arch] startup wait finished
+2026-09-30 15:40:33 [srv-gui-arch] REPO-UPDATE started
+2026-09-30 15:40:33 [srv-gui-arch] REPO-UPDATE finished
+2026-09-30 15:40:33 [srv-gui-arch] Checking for available updates...
+2026-09-30 15:40:34 [srv-gui-arch] Found 0 update(s).
+2026-09-30 15:40:34 [srv-gui-arch] No updates available. Container is up to date.
+2026-09-30 15:40:34 [srv-gui-arch] stopping container
+2026-09-30 15:40:35 [srv-gui-arch] container stopped
+2026-09-30 15:40:35 [srv-gui-arch] start slot released
+2026-09-30 15:40:35 [srv-redpanda-arch] start slot acquired
+2026-09-30 15:40:35 [srv-redpanda-arch] starting container
+2026-09-30 15:40:35 [srv-openclaw-arch] startup wait finished
+2026-09-30 15:40:35 [srv-openclaw-arch] REPO-UPDATE started
+2026-09-30 15:40:35 [srv-redpanda-arch] container started and is ready
+2026-09-30 15:40:35 [srv-redpanda-arch] waiting 4s for network/services
+2026-09-30 15:40:39 [srv-berlussimo-debian] container stopped
+2026-09-30 15:40:39 [srv-berlussimo-debian] start slot released
+2026-09-30 15:40:39 [srv-shinobi] start slot acquired
+2026-09-30 15:40:39 [srv-shinobi] starting container
+2026-09-30 15:40:39 [srv-redpanda-arch] startup wait finished
+2026-09-30 15:40:39 [srv-redpanda-arch] REPO-UPDATE started
+2026-09-30 15:40:40 [srv-redpanda-arch] REPO-UPDATE finished
+2026-09-30 15:40:40 [srv-redpanda-arch] Checking for available updates...
+2026-09-30 15:40:40 [srv-openclaw-arch] REPO-UPDATE finished
+2026-09-30 15:40:40 [srv-openclaw-arch] Checking for available updates...
+2026-09-30 15:40:40 [srv-shinobi] container started and is ready
+2026-09-30 15:40:40 [srv-shinobi] waiting 4s for network/services
+2026-09-30 15:40:40 [srv-redpanda-arch] Found 0 update(s).
+2026-09-30 15:40:40 [srv-redpanda-arch] No updates available. Container is up to date.
+2026-09-30 15:40:40 [srv-redpanda-arch] stopping container
+2026-09-30 15:40:40 [srv-openclaw-arch] Found 0 update(s).
+2026-09-30 15:40:40 [srv-openclaw-arch] No updates available. Container is up to date.
+2026-09-30 15:40:40 [srv-openclaw-arch] stopping container
+2026-09-30 15:40:42 [srv-redpanda-arch] container stopped
+2026-09-30 15:40:42 [srv-redpanda-arch] start slot released
+2026-09-30 15:40:42 [susytumble] start slot acquired
+2026-09-30 15:40:42 [susytumble] starting container
+2026-09-30 15:40:42 [srv-openclaw-arch] container stopped
+2026-09-30 15:40:42 [srv-openclaw-arch] start slot released
+2026-09-30 15:40:42 [ubuntu-docker] start slot acquired
+2026-09-30 15:40:42 [ubuntu-docker] starting container
+2026-09-30 15:40:43 [susytumble] container started and is ready
+2026-09-30 15:40:43 [susytumble] waiting 4s for network/services
+2026-09-30 15:40:44 [srv-shinobi] startup wait finished
+2026-09-30 15:40:44 [srv-shinobi] REPO-UPDATE started
+2026-09-30 15:40:45 [srv-erpnext-debian] container stopped
+2026-09-30 15:40:45 [srv-erpnext-debian] start slot released
+2026-09-30 15:40:47 [srv-shinobi] REPO-UPDATE finished
+2026-09-30 15:40:47 [srv-shinobi] Checking for available updates...
+2026-09-30 15:40:47 [susytumble] startup wait finished
+2026-09-30 15:40:47 [susytumble] REPO-UPDATE started
+2026-09-30 15:40:47 [srv-shinobi] Found 2 update(s).
+2026-09-30 15:40:47 [srv-shinobi] Creating snapshot: pre-update-20260930-154047...
+2026-09-30 15:40:48 [ubuntu-docker] container started and is ready
+2026-09-30 15:40:48 [ubuntu-docker] waiting 4s for network/services
+2026-09-30 15:40:48 [srv-shinobi] Snapshot created successfully.
+2026-09-30 15:40:48 [srv-shinobi] waiting for download slot
+2026-09-30 15:40:48 [srv-shinobi] DOWNLOAD started
+2026-09-30 15:40:49 [srv-shinobi] DOWNLOAD finished
+2026-09-30 15:40:49 [srv-shinobi] INSTALL started
+2026-09-30 15:40:49 [susytumble] REPO-UPDATE finished
+2026-09-30 15:40:49 [susytumble] Checking for available updates...
+2026-09-30 15:40:49 [susytumble] Found 0 update(s).
+2026-09-30 15:40:49 [susytumble] No updates available. Container is up to date.
+2026-09-30 15:40:49 [susytumble] stopping container
+2026-09-30 15:40:50 [srv-shinobi] INSTALL finished successfully
+2026-09-30 15:40:50 [srv-shinobi] stopping container
+2026-09-30 15:40:51 [susytumble] container stopped
+2026-09-30 15:40:51 [susytumble] start slot released
+2026-09-30 15:40:51 [srv-shinobi] container stopped
+2026-09-30 15:40:51 [srv-shinobi] start slot released
+2026-09-30 15:40:52 [ubuntu-docker] startup wait finished
+2026-09-30 15:40:52 [ubuntu-docker] REPO-UPDATE started
+2026-09-30 15:40:54 [ubuntu-docker] REPO-UPDATE finished
+2026-09-30 15:40:54 [ubuntu-docker] Checking for available updates...
+2026-09-30 15:40:55 [ubuntu-docker] Found 0 update(s).
+2026-09-30 15:40:55 [ubuntu-docker] No updates available. Container is up to date.
+2026-09-30 15:40:55 [ubuntu-docker] stopping container
+2026-09-30 15:41:06 [ubuntu-docker] container stopped
+2026-09-30 15:41:06 [ubuntu-docker] start slot released
+2026-09-30 15:41:06 SUMMARY: 24 successful, 0 failed

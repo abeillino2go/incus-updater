@@ -13,6 +13,7 @@ from logger import run_log
 from output import output
 from models.container import Container
 from commands import CommandError, run_command, incus_exec, incus_command
+from commands_snapshot import create_pre_update_snapshot, rollback_to_snapshot
 
 DISCOVERY_TIMEOUT = 30
 PANEL_COUNT = 4
@@ -351,7 +352,16 @@ async def update_container(container: Container, config: Config, start_semaphore
             container.set_status("SUCCESS")
             return
 
-        # Phase 2: Exklusiver Download (nur wenn Updates anstehen)
+		# ERWEITERUNG: Snapshot nur erstellen, wenn es in der config.toml AKTIVIERT ist
+        if config.incus_snapshots:
+            try:
+                created_snapshot = await create_pre_update_snapshot(container)
+            except Exception as snap_exc:
+                raise RuntimeError(f"Snapshot creation failed: {snap_exc}")
+        else:
+            container.log_event("Snapshots are disabled in config.toml. Skipping creation.")
+ 
+	    # Phase 2: Exklusiver Download (nur wenn Updates anstehen)
         container.set_status("WAITING-DOWNLOAD")
         container.log_event("waiting for download slot")
 

@@ -1,0 +1,77 @@
+# Incus Container Updater
+
+A parallel, asynchronous container update manager for Incus hosts featuring a modern 2x2 Terminal User Interface (TUI) powered by the Textual framework.
+
+## Features
+
+- **Parallel Repository Syncing:** All containers refresh their package lists simultaneously to save time.
+- **Smart Skipping:** The tool automatically determines the exact number of pending updates. Up-to-date containers skip the queue entirely.
+- **Isolate & Throttled Downloads:** Dedicated queue slots restrict concurrent package downloads to prevent bandwidth saturation.
+- **Dual Mode:** Run with a rich interactive TUI (`--ui`) or as a clean script output for cronjobs/automation.
+
+## Architecture
+
+The project is fully modularized for easy maintenance and low AI-token usage:
+- `main.py`: Entrypoint and CLI argument parsing.
+- `config.py`: Handles configuration loading (`config.toml`).
+- `logger.py`: Manages event logging to disk.
+- `output.py`: Abstracted bridge linking core engine logic with the TUI.
+- `commands.py`: Asynchronous subprocess execution for Incus commands.
+- `models/container.py`: Core container data structures.
+- `ui/app.py`: Textual TUI layouts and widgets.
+
+## Installation
+
+The package is fully optimized for installation via `pipx` (or `pip`) directly from your private Forgejo instance.
+
+### Prerequisites
+Make sure `pipx` is installed on your Incus host:
+```bash
+# Debian / Ubuntu
+sudo apt install pipx
+pipx ensurepath
+```
+
+### Install from Forgejo (via SSH)
+```bash
+pipx install git+ssh://git@YOUR-FORGEJO-SERVER.com:YOUR-ORGANIZATION/incus-updater.git
+```
+
+### Upgrading the tool
+To pull the latest changes from your Forgejo main branch:
+```bash
+pipx upgrade incus-updater
+```
+
+## Configuration
+
+The application requires a `config.toml` file located in the application directory.
+
+```toml
+[general]
+max_started_containers = 2     # How many stopped containers to run simultaneously
+max_downloads = 1              # Maximum parallel package downloads
+startup_delay_seconds = 5      # Network/service warmup delay for booted containers
+
+[containers]
+include = []                   # Specific containers to update (Empty = All)
+exclude = ["test-container"]   # Containers to explicitly skip
+```
+
+## Usage
+
+Once installed via pipx, the tool is globally available in your system path.
+
+```bash
+# Run with the interactive 2x2 Terminal UI
+incus-updater --ui
+
+# Perform a safe dry-run discovery without changing anything
+incus-updater --dry-run
+
+# Run as standard script output (Perfect for Cronjobs)
+incus-updater
+```
+
+## License
+MIT

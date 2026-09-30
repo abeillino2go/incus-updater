@@ -12,7 +12,8 @@ max_downloads = 1
 # Bereits laufende Container sind davon nicht betroffen.
 startup_delay_seconds = 4
 
-
+# NEU: Aktiviert (true) oder deaktiviert (false) Snapshots vor Upgrades
+incus_snapshots = true      
 
 [containers]
 #include = [
