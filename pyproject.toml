@@ -15,5 +15,9 @@ dependencies = [
 [project.scripts]
 incus-updater = "main:main"
 
+[tool.setuptools]
+# Das zwingt Python, die main.py auf der obersten Ebene mit einzupacken!
+py-modules = ["main"]
+
 [tool.setuptools.packages.find]
 include = ["ui", "models"]
