@@ -10,7 +10,7 @@ max_downloads = 1
 # Wartezeit nach dem Start eines STOPPED-Containers,
 # bevor Repository-Update / Download beginnt.
 # Bereits laufende Container sind davon nicht betroffen.
-startup_delay = 5
+startup_delay_seconds = 4
 
 
 

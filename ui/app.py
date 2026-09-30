@@ -155,14 +155,20 @@ async def stop_container(container: Container) -> None:
         container.log_event(f"WARNING: could not stop container: {exc}")
 
 # ============================================================================
-# Package Managers Specific
+# Package Managers Specific (Optimiert für parallele Updates)
 # ============================================================================
-async def apt_download(c: Container) -> None:
+async def apt_refresh(c: Container) -> None:
     await incus_exec(c, "apt-get", "update")
+
+async def apt_download(c: Container) -> None:
     await incus_exec(c, "apt-get", "-y", "--download-only", "upgrade")
 
 async def apt_install(c: Container) -> None:
     await incus_exec(c, "apt-get", "-y", "--no-download", "upgrade")
+
+async def pacman_refresh(c: Container) -> None:
+    # -Sy aktualisiert nur die lokalen Paketdatenbanken
+    await incus_exec(c, "pacman", "-Sy", "--noconfirm")
 
 async def pacman_download(c: Container) -> None:
     await incus_exec(c, "pacman", "-Syu", "--downloadonly", "--noconfirm")
@@ -170,22 +176,122 @@ async def pacman_download(c: Container) -> None:
 async def pacman_install(c: Container) -> None:
     await incus_exec(c, "pacman", "-Syu", "--noconfirm")
 
+async def dnf_refresh(c: Container) -> None:
+    await incus_exec(c, "dnf", "check-update") # Prüft Repos, wirft oft Code 100 bei Updates aus
+
 async def dnf_download(c: Container) -> None:
     await incus_exec(c, "dnf", "upgrade", "-y", "--downloadonly")
 
 async def dnf_install(c: Container) -> None:
     await incus_exec(c, "dnf", "upgrade", "-y", "--cacheonly")
 
-async def zypper_download(c: Container) -> None:
+async def zypper_refresh(c: Container) -> None:
     await incus_exec(c, "zypper", "--non-interactive", "refresh")
+
+async def zypper_download(c: Container) -> None:
     await incus_exec(c, "zypper", "--non-interactive", "update", "--download-only")
 
 async def zypper_install(c: Container) -> None:
     await incus_exec(c, "zypper", "--non-interactive", "update", "--no-remote")
 
-async def apk_update(c: Container) -> None:
+async def apk_refresh(c: Container) -> None:
     await incus_exec(c, "apk", "update")
+
+async def apk_install(c: Container) -> None:
     await incus_exec(c, "apk", "upgrade")
+
+
+# --- NEU: Hilfsfunktionen zum Zählen der Updates ---
+
+async def count_command_lines(*args: str) -> int:
+    """Führt einen Befehl aus und zählt, wie viele Zeilen er ausgibt."""
+    process = await asyncio.create_subprocess_exec(
+        *args,
+        stdin=asyncio.subprocess.DEVNULL,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.DEVNULL,
+    )
+    try:
+        stdout, _ = await asyncio.wait_for(process.communicate(), timeout=15)
+        lines = stdout.decode(errors="replace").strip().splitlines()
+        return len(lines)
+    except Exception:
+        return 0
+
+async def check_updates_count(container: Container) -> int:
+    """Ermittelt die genaue Anzahl anstehender Updates im Container."""
+    pm = container.package_manager
+    
+    if pm == "pacman":
+        # pacman -Qu listet alle updatebaren Pakete auf. Exit Code 1 wenn keine da sind.
+        process = await asyncio.create_subprocess_exec(
+            "incus", "exec", container.name, "--", "pacman", "-Qu",
+            stdin=asyncio.subprocess.DEVNULL, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL
+        )
+        try:
+            stdout, _ = await asyncio.wait_for(process.communicate(), timeout=15)
+            lines = stdout.decode(errors="replace").strip().splitlines()
+            return len(lines)
+        except Exception:
+            return 0
+
+    elif pm == "apt":
+        # apt list --upgradable gibt alle Pakete aus (+1 Header-Zeile)
+        process = await asyncio.create_subprocess_exec(
+            "incus", "exec", container.name, "--", "apt", "list", "--upgradable",
+            stdin=asyncio.subprocess.DEVNULL, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL
+        )
+        try:
+            stdout, _ = await asyncio.wait_for(process.communicate(), timeout=15)
+            lines = stdout.decode(errors="replace").strip().splitlines()
+            count = len(lines) - 1 # Header abziehen
+            return max(0, count)
+        except Exception:
+            return 0
+
+    elif pm == "apk":
+        # apk version -l '<' listet veraltete Pakete auf
+        process = await asyncio.create_subprocess_exec(
+            "incus", "exec", container.name, "--", "apk", "version", "-l", "<",
+            stdin=asyncio.subprocess.DEVNULL, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL
+        )
+        try:
+            stdout, _ = await asyncio.wait_for(process.communicate(), timeout=15)
+            lines = stdout.decode(errors="replace").strip().splitlines()
+            return len(lines)
+        except Exception:
+            return 0
+
+    elif pm == "dnf":
+        # dnf check-update gibt Exit-Code 100 zurück, wenn Updates da sind
+        process = await asyncio.create_subprocess_exec(
+            "incus", "exec", container.name, "--", "dnf", "check-update", "-q",
+            stdin=asyncio.subprocess.DEVNULL, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL
+        )
+        try:
+            await asyncio.wait_for(process.wait(), timeout=15)
+            if process.returncode == 100:
+                return 1 # Signaliert "Updates vorhanden" (DNF-Zeilen-Parsing ist sehr fehleranfällig)
+            return 0
+        except Exception:
+            return 0
+            
+    return 0
+
+
+
+# --- Die neuen Weichensteller-Funktionen ---
+
+async def package_refresh(container: Container) -> None:
+    pm = container.package_manager
+    if pm == "apt": await apt_refresh(container)
+    elif pm == "pacman": await pacman_refresh(container)
+    elif pm == "dnf": 
+        try: await dnf_refresh(container)
+        except Exception: pass # dnf check-update gibt Fehlercodes zurück, wenn Updates da sind
+    elif pm == "zypper": await zypper_refresh(container)
+    elif pm == "apk": await apk_refresh(container)
+    else: raise RuntimeError(f"Unsupported package manager: {pm}")
 
 async def package_download(container: Container) -> None:
     pm = container.package_manager
@@ -193,13 +299,13 @@ async def package_download(container: Container) -> None:
     elif pm == "pacman": await pacman_download(container)
     elif pm == "dnf": await dnf_download(container)
     elif pm == "zypper": await zypper_download(container)
-    elif pm == "apk": await apk_update(container)
+    elif pm == "apk": pass # Alpine macht alles in einem Rutsch beim Installieren
     else: raise RuntimeError(f"Unsupported package manager: {pm}")
 
 async def package_install(container: Container) -> None:
     pm = container.package_manager
-    if pm == "apk": return
-    if pm == "apt": await apt_install(container)
+    if pm == "apk": await apk_install(container)
+    elif pm == "apt": await apt_install(container)
     elif pm == "pacman": await pacman_install(container)
     elif pm == "dnf": await dnf_install(container)
     elif pm == "zypper": await zypper_install(container)
@@ -227,6 +333,25 @@ async def update_container(container: Container, config: Config, start_semaphore
             await asyncio.sleep(config.startup_delay_seconds)
             container.log_event("startup wait finished")
 
+        # Phase 1: Paralleles Repo-Update
+        container.set_status("REPO-UPDATE")
+        container.log_event("REPO-UPDATE started")
+        await package_refresh(container)
+        container.log_event("REPO-UPDATE finished")
+
+        # NEU: Updates zählen
+        container.log_event("Checking for available updates...")
+        count = await check_updates_count(container)
+        container.update_count = count
+        container.log_event(f"Found {count} update(s).")
+
+        # NEU: Abkürzung, wenn der Container bereits up-to-date ist!
+        if count == 0:
+            container.log_event("No updates available. Container is up to date.")
+            container.set_status("SUCCESS")
+            return
+
+        # Phase 2: Exklusiver Download (nur wenn Updates anstehen)
         container.set_status("WAITING-DOWNLOAD")
         container.log_event("waiting for download slot")
 
@@ -237,6 +362,7 @@ async def update_container(container: Container, config: Config, start_semaphore
             container.set_status("DOWNLOADED")
             container.log_event("DOWNLOAD finished")
 
+        # Phase 3: Installation
         container.set_status("INSTALLING")
         container.log_event("INSTALL started")
         await package_install(container)
@@ -305,7 +431,8 @@ class IncusUpdaterApp(App):
         self.next_container_index = 0
         self.finished_count = 0
         self.finished = False
-        self.state_column_key = None  # NEU: Um den exakten Schlüssel zu speichern
+        self.state_column_key = None
+        self.updates_column_key = None  # Hier waren vermutlich Tabs reingerutscht
 
 
     def compose(self) -> ComposeResult:
@@ -333,35 +460,45 @@ class IncusUpdaterApp(App):
         table = self.query_one("#container-table", DataTable)
         table.clear()
 
-        # NEU: add_columns gibt eine Liste von ColumnKey-Objekten zurück
-        columns = table.add_columns("CONTAINER", "STATE", "OS", "UPDATER")
-        self.state_column_key = columns[1]  # Die zweite Spalte ist "STATE"
+        # KORREKTUR: Wir fangen die Column-Keys ab (jetzt 5 Spalten statt 4)
+        columns = table.add_columns("CONTAINER", "STATE", "UPDATES", "OS", "UPDATER")
+        self.state_column_key = columns[1]    # Spalte STATE
+        self.updates_column_key = columns[2]  # NEU: Spalte UPDATES
 
         for container in self.containers:
             state = "RUNNING" if container.original_running else "STOPPED"
+            # Initial steht bei Updates ein "?"
             table.add_row(
-                container.name, state, container.distro_name, container.package_manager,
+                container.name, state, "?", container.distro_name, container.package_manager,
                 key=container.name
             )
 
-
     def update_container_table_row(self, container: Container) -> None:
-        """Aktualisiert die STATE-Spalte in der oberen Übersicht live."""
+        """Aktualisiert die STATE- und UPDATES-Spalte in der oberen Übersicht live."""
         table = self.query_one("#container-table", DataTable)
-        if self.state_column_key is not None:
-            try:
-                # Farbliche Codierung je nach Zustand
+        try:
+            # 1. Update der STATE-Spalte
+            if self.state_column_key is not None:
                 status_text = container.status
                 if container.status == "SUCCESS":
                     status_text = "[bold green]SUCCESS[/]"
                 elif container.status == "ERROR":
                     status_text = "[bold red]ERROR[/]"
+                elif container.status == "REPO-UPDATE":
+                    status_text = "[bold cyan]REPO-UPDATE[/]"
                 elif "DOWNLOADING" in container.status or "INSTALLING" in container.status:
                     status_text = f"[bold yellow]{container.status}[/]"
- 
                 table.update_cell(container.name, self.state_column_key, status_text)
-            except Exception:
-                pass
+            
+            # 2. NEU: Update der UPDATES-Spalte (sobald REPO-UPDATE durch ist)
+            if self.updates_column_key is not None and container.status != "DISCOVERED":
+                if container.update_count == 0 and container.status in ("SUCCESS", "FINISHED", "REPO-UPDATE"):
+                    # Falls nach dem Refresh 0 herauskam
+                    table.update_cell(container.name, self.updates_column_key, "[green]0 Pakete[/]")
+                elif container.update_count > 0:
+                    table.update_cell(container.name, self.updates_column_key, f"[yellow]{container.update_count} Pakete[/]")
+        except Exception:
+            pass
 
 
     def assign_initial_panels(self) -> None:

@@ -31,15 +31,16 @@ async def do_dry_run(config: Config) -> int:
         for name in sorted(missing): print(f"  ! {name}")
         print()
 
-    print(f"{'CONTAINER':<30}{'STATE':<10}{'DISTRIBUTION':<38}{'PACKAGE MANAGER'}\n" + "-" * 130)
+    print(f"{'CONTAINER':<30}{'STATE':<12}{'UPDATES':<15}{'DISTRIBUTION':<35}{'PACKAGE MANAGER'}\n" + "-" * 130)
 
     for container in containers:
         state = "RUNNING" if container.original_running else "STOPPED"
         try:
             await inspect_container(container)
-            print(f"{container.name:<30}{state:<10}{container.distro_name:<38}{container.package_manager}")
+            # Hier geben wir einfach "0" oder "?" aus, da im Dry-Run noch nicht gezählt wird
+            print(f"{container.name:<30}{state:<12}{'?':<15}{container.distro_name:<35}{container.package_manager}")
         except Exception as exc:
-            print(f"{container.name:<30}{state:<10}ERROR: {exc}")
+            print(f"{container.name:<30}{state:<12}{'ERROR':<15}{'ERROR: ' + str(exc):<35}")
 
     print("\n" + "-" * 130 + f"\n{len(containers)} container(s) selected.\n{len(all_containers)} container(s) found.\n\nNo container was started or stopped.\nDRY RUN: no package updates were performed.\n")
     return 0
