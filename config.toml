@@ -1,0 +1,35 @@
+[general]
+
+# Maximal so viele Container werden von diesem Programm
+# gleichzeitig gestartet.
+max_started_containers = 4
+
+# Maximal ein Container lädt gleichzeitig Updates.
+max_downloads = 1
+
+# Wartezeit nach dem Start eines STOPPED-Containers,
+# bevor Repository-Update / Download beginnt.
+# Bereits laufende Container sind davon nicht betroffen.
+startup_delay = 5
+
+
+
+[containers]
+#include = [
+#    "arch-ai",
+#    "arch-aurto",
+#    "archadmino",
+#]
+include = []
+
+exclude = [
+"test-arch",
+"test-arch-unpriviledged",
+"test-nassali-arch",
+"testarchi",
+"container-arch-vnc",
+"container-gui-arch",
+"container-xpra-arch",
+"container-xpra-arch-obs",
+"container-xpra-arch-working"
+]

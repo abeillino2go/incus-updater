@@ -1,0 +1,13 @@
+# Virtuelle Umgebung
+.venv/
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Projekt-spezifische Logs und Configs (Sicherheit!)
+#incus-updater.log
+#config.toml
