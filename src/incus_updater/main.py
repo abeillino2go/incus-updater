@@ -4,11 +4,11 @@ import argparse
 import asyncio
 import sys
 
-from config import load_config, Config
-from logger import run_log
-from output import output
-from models.container import Container
-from ui.app import (
+from incus_updater.config import load_config, Config
+from incus_updater.logger import run_log
+from incus_updater.output import output
+from incus_updater.models.container import Container
+from incus_updater.ui.app import (
     get_all_containers, select_containers, inspect_container, 
     update_container, IncusUpdaterApp
 )
@@ -89,6 +89,7 @@ def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Parallel Incus container updater")
     parser.add_argument("--dry-run", action="store_true", help="Discover containers without starting or updating anything.")
     parser.add_argument("--ui", action="store_true", help="Run the updater with a 2x2 terminal UI.")
+    parser.add_argument("-c", "--config", type=str, default=None, help="Path to a custom config.toml file")
     return parser.parse_args()
 
 def print_ui_summary(containers: list[Container]) -> None:
@@ -105,7 +106,7 @@ def print_ui_summary(containers: list[Container]) -> None:
     print(f"\nSuccessful: {success}\nFailed:     {failed}")
 
 async def async_main(args: argparse.Namespace) -> int:
-    config = load_config()
+    config = load_config(args.config)
     if args.dry_run: return await do_dry_run(config)
 
     containers, invalid, missing = await prepare_containers_local(config)

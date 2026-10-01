@@ -1,5 +1,5 @@
 import asyncio
-from output import output
+from incus_updater.output import output
 
 COMMAND_TIMEOUT = 3600
 

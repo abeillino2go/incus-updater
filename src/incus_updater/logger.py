@@ -1,7 +1,7 @@
 import time
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 LOG_FILE = BASE_DIR / "incus-updater.log"
 
 class RunLog:

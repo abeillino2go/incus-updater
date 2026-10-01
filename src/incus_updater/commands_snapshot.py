@@ -1,7 +1,7 @@
 import asyncio
 import time
-from models.container import Container
-from commands import incus_command, CommandError
+from incus_updater.models.container import Container
+from incus_updater.commands import incus_command, CommandError
 
 async def create_pre_update_snapshot(container: Container) -> str:
     """

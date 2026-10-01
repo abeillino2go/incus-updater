@@ -13,7 +13,18 @@ dependencies = [
 ]
 
 [project.scripts]
-incus-updater = "main:main"
+incus-updater = "incus_updater.main:main"
+
+[tool.setuptools]
+# Wir listen alle losen Skripte auf, damit sie mitkopiert werden:
+#py-modules = ["main", "config", "logger", "output", "commands", "commands_snapshot"]
+# NEU: Erlaubt das Mitverpacken von Konfigurations- oder README-Dateien
+include-package-data = true
+
+[tool.setuptools.package-data]
+incus_updater = ["config.toml"]
+
 
 [tool.setuptools.packages.find]
+# Sucht weiterhin nach den Ordnern 'ui' und 'models'
 where = ["src"]

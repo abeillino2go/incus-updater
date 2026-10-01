@@ -1,2 +1,2 @@
 [console_scripts]
-incus-updater = main:main
+incus-updater = incus_updater.main:main

@@ -1,7 +1,7 @@
 import time
 from dataclasses import dataclass
-from output import output
-from logger import run_log
+from incus_updater.output import output
+from incus_updater.logger import run_log
 
 @dataclass
 class Container:
