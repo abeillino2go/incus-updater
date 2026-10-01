@@ -15,12 +15,5 @@ dependencies = [
 [project.scripts]
 incus-updater = "main:main"
 
-
-[tool.setuptools]
-# Wir listen alle einzelnen Skripte auf der obersten Ebene auf:
-py-modules = ["main", "config", "logger", "output", "commands", "commands_snapshot"]
-
-
 [tool.setuptools.packages.find]
-include = ["ui", "models"]
-
+where = ["src"]

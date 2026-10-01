@@ -1,0 +1,2 @@
+[console_scripts]
+incus-updater = main:main

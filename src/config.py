@@ -2,7 +2,9 @@ import tomllib
 from dataclasses import dataclass, field
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+#BASE_DIR = Path(__file__).resolve().parent -->/src
+BASE_DIR = Path(__file__).resolve().parent.parent #Hauptordner
+
 CONFIG_FILE = BASE_DIR / "config.toml"
 
 @dataclass
