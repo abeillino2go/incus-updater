@@ -462,7 +462,7 @@ class IncusUpdaterApp(App):
     def on_mount(self) -> None:
         output.attach(self)
         self.populate_container_table()
-        self.assign_initial_panels()
+        #self.assign_initial_panels()
         self.update_status("Updating...")
         self.run_worker(self.run_update(), exclusive=True)
 
@@ -511,27 +511,27 @@ class IncusUpdaterApp(App):
             pass
 
 
-    def assign_initial_panels(self) -> None:
-        for panel in self.panels:
-            if self.next_container_index >= len(self.containers):
-                panel.clear_panel()
-                continue
-            container = self.containers[self.next_container_index]
-            self.next_container_index += 1
-            panel.assign(container)
-            self.container_to_panel[container.name] = panel
-
-    def recycle_panel(self, container: Container) -> None:
-        panel = self.container_to_panel.pop(container.name, None)
-        if panel is None: return
-        if self.next_container_index < len(self.containers):
-            next_container = self.containers[self.next_container_index]
-            self.next_container_index += 1
-            panel.assign(next_container)
-            self.container_to_panel[next_container.name] = panel
-            self.update_status(f"Running — {self.finished_count}/{len(self.containers)} finished")
-        else:
-            panel.clear_panel()
+#    def assign_initial_panels(self) -> None:
+#        for panel in self.panels:
+#            if self.next_container_index >= len(self.containers):
+#                panel.clear_panel()
+#                continue
+#            container = self.containers[self.next_container_index]
+#            self.next_container_index += 1
+#            panel.assign(container)
+#            self.container_to_panel[container.name] = panel
+#
+#    def recycle_panel(self, container: Container) -> None:
+#        panel = self.container_to_panel.pop(container.name, None)
+#        if panel is None: return
+#        if self.next_container_index < len(self.containers):
+#            next_container = self.containers[self.next_container_index]
+#            self.next_container_index += 1
+#            panel.assign(next_container)
+#            self.container_to_panel[next_container.name] = panel
+#            self.update_status(f"Running — {self.finished_count}/{len(self.containers)} finished")
+#        else:
+#            panel.clear_panel()
 
     def write(self, container_name: str, text: str) -> None:
         panel = self.container_to_panel.get(container_name)
@@ -541,9 +541,9 @@ class IncusUpdaterApp(App):
         panel = self.container_to_panel.get(container_name)
         if panel is not None: panel.set_title(status)
 
-    def container_finished(self, container: Container) -> None:
-        self.finished_count += 1
-        self.recycle_panel(container)
+#    def container_finished(self, container: Container) -> None:
+#        self.finished_count += 1
+#        self.recycle_panel(container)
 
     def update_status(self, text: str) -> None:
         self.query_one("#status", Static).update(f" {text}")
@@ -552,22 +552,56 @@ class IncusUpdaterApp(App):
         self.update_status(text)
 
     async def run_update(self) -> None:
+        """Führt die Updates über eine kontrollierte Warteschlange aus."""
         start_semaphore = asyncio.Semaphore(self.config.max_started_containers)
         download_semaphore = asyncio.Semaphore(self.config.max_downloads)
 
-        async def worker(container: Container) -> None:
-            await update_container(container, self.config, start_semaphore, download_semaphore)
-            self.container_finished(container)
+        # 1. Erstelle eine asynchrone Warteschlange und füttere sie mit allen Containern
+        queue = asyncio.Queue()
+        for container in self.containers:
+            await queue.put(container)
 
-        tasks = [asyncio.create_task(worker(container)) for container in self.containers]
-        await asyncio.gather(*tasks)
+        # 2. Ein Worker, der fest an ein Panel gebunden ist
+        async def panel_worker(panel) -> None:
+            while not queue.empty():
+                try:
+                    container = queue.get_nowait()
+                except asyncio.QueueEmpty:
+                    break
 
+                # Weise den Container dem Panel zu und starte das Update
+                self.container_to_panel[container.name] = panel
+                panel.assign(container)
+
+                await update_container(container, self.config, start_semaphore, download_semaphore)
+
+                # Update beendet -> Zähler hochsetzen und Verbindung lösen
+                self.finished_count += 1
+                self.container_to_panel.pop(container.name, None)
+                self.update_status(f"Running — {self.finished_count}/{len(self.containers)} finished")
+                
+                queue.task_done()
+
+            # Wenn dieser Worker keine Arbeit mehr hat, leert er sein Panel final
+            panel.clear_panel()
+
+        # 3. Starte exakt so viele Worker, wie wir Panels haben (PANEL_COUNT = 4)
+        worker_tasks = []
+        for panel in self.panels:
+            task = asyncio.create_task(panel_worker(panel))
+            worker_tasks.append(task)
+
+        # Warte, bis alle 4 Panel-Worker ihre Arbeit beendet haben
+        await asyncio.gather(*worker_tasks)
+
+        # Zusammenfassung am Ende
         success = sum(1 for c in self.containers if c.status == "SUCCESS")
         failed = len(self.containers) - success
         self.finished = True
         self.update_status(f"Finished — {success} successful, {failed} failed")
         run_log.summary(f"SUMMARY: {success} successful, {failed} failed")
         output.global_message("Update finished.")
+
 
     def action_quit(self) -> None:
         output.detach()
